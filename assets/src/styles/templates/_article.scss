@@ -1,0 +1,32 @@
+.article .content {
+    @extend .container;
+}
+
+.article .pagination {
+    margin: 2rem auto;
+    align-self: flex-end;
+}
+.article-title h1 {
+    margin-top: 2rem;
+}
+.article-img {
+    margin-top: 2rem;
+}
+.article-meta {
+    display: block;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    background: $lightest-grey;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.article .left {
+    a {
+        @include link-underline($background-color, $text-color, $selection-color);
+        &:hover {
+            @include link-underline($background-color, $link-hover-color, $selection-color);
+        }
+    }
+}

@@ -1,0 +1,195 @@
+%homepage-dark-bg {
+    background-color: $dark-grey;
+    color: $lighter-grey;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    &:hover, &:focus, &:active {
+        background-color: $darker-grey;
+        color: $lightest-grey;
+    }
+}
+
+.nieuws .content {
+    @extend .container;
+    margin-top: 3rem;
+}
+
+.home-header{
+    @extend .container;
+}
+.home-header-link {
+    display: block;
+    width: 100%;
+}
+#home-header-image {
+    display: block;
+    width: 100%;
+}
+
+.grid-item {
+    margin-bottom: 4rem;
+    width: 90%;
+    @include at-least($M) {
+        // margin-bottom: 9vw;
+        width: 45%;
+    }
+    // @include at-least($L) {
+    //     margin-bottom: 7.5vw;
+    // }
+    // @include at-least($XL) {
+    //     margin-bottom: 6.67vw;
+    // }
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+.grid-item.visible, .no-js .grid-item {
+    opacity: 1;
+    visibility: visible;
+}
+.grid-sizer {
+    @include at-least($M) {
+        width: 45%;
+    }
+}
+.gutter-sizer {
+    width: 5%;
+    @include at-least($M) {
+        width: 9.9%;
+    }
+}
+
+.homepage-article {
+    color: $grey;
+    transition: color 0.3s ease-in-out;
+    &:hover {
+        color: $darker-grey;
+        .homepage-article-body a {
+            @include link-underline($background-color, $darker-grey, $selection-color);
+            &:hover {
+                @include link-underline($background-color, $link-hover-color, $selection-color);
+            }
+        }
+    }
+}
+.homepage-article-image {
+    margin: 1rem 0;
+    width: 100%;
+    img {
+        width: 100%;
+    }
+}
+.homepage-article-title, .homepage-article h2 {
+    margin: 0;
+    color: $dark-grey;
+}
+.homepage-article-body {
+    text-align: justify;
+    a {
+        @include link-underline($background-color, $grey, $selection-color);
+    }
+}
+.homepage-article-link {
+    margin-top: 1rem;
+}
+.homepage-article .about {
+    @extend %homepage-dark-bg;
+    padding: 2rem;
+    text-align: justify;
+    font-style: italic;
+}
+.homepage-article.social {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding: 2rem 0;
+    .social-icon {
+        height: 4rem;
+        width: 4rem;
+        text-shadow: none;
+        background: none;
+        svg {
+            fill: $lighter-grey;
+            transition: fill 0.3s ease-in-out;
+        }
+        &:hover {
+            text-shadow: none;
+            background: none;
+        }
+    }
+    &:hover a svg {
+        fill: $lightest-grey;
+    }
+    .facebook svg:hover {
+        fill: $fb-blue;
+    }
+    .instagram svg:hover {
+        fill: $insta-magenta;
+    }
+    .linkedin svg:hover {
+        fill: $li-blue;
+    }
+    @extend %homepage-dark-bg;
+}
+
+
+.home-projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @extend %homepage-dark-bg;
+    padding: 2rem;
+    margin: 1rem 0;
+}
+.home-project-link {
+    width: 45%;
+    display: block;
+    margin-bottom: 2rem;
+    &:nth-child(n+2) {
+        margin-bottom: 0;
+    }
+}
+.home-project-image {
+    transition: filter 0.3s ease-in-out;
+    filter: saturate(20%) opacity(90%);
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    &:hover {
+        filter: none;
+    }
+}
+.home-contact {
+    .h4 {
+        margin-bottom: 1rem;
+    }
+    section {
+        @extend %homepage-dark-bg;
+        padding: 2rem;
+    }
+    a {
+        @include link-underline($dark-grey, $lighter-grey, $selection-color);
+    }
+    &:hover {
+        a {
+            @include link-underline($darker-grey, $lightest-grey, $selection-color);
+            &:hover {
+                @include link-underline($darker-grey, $link-hover-color, $selection-color);
+            }
+        }
+    }
+}
+.home-projects, .home-contact, .instagram {
+    .h4 {
+        color: $dark-grey;
+        transition: color 0.3s ease-in-out;
+    }
+    &:hover .h4 {
+        color: $darker-grey;
+    }
+}
+.instagram {
+    figcaption {
+        margin-top: 1rem;
+    }
+}

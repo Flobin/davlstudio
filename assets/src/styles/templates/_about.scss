@@ -1,0 +1,43 @@
+body.about .content {
+    @extend .container;
+}
+.about .team-item {
+    width: 24.5%;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    padding: 0 0.5rem;
+    &::before {
+        clear: both;
+        display: block;
+        width: calc(100% + 60px);
+        height: calc(100% + 60px);
+        content: "";
+        position: absolute;
+        left: -30px;
+        top: -30px;
+        transition: all .3s ease-out;
+        background-color: rgba(0, 0, 0, 0);
+        padding: 30px;
+        z-index: -1;
+    }
+    &:hover {
+        transform: scale(1.02);
+        z-index: 3;
+    }
+    &:hover::before{
+        background-color: #fff;
+        box-shadow: 0 0 40px rgba(0,0,0,.15);
+    }
+    // &:nth-child(4n-3) {
+    //     padding-left: 0;
+    // }
+    // &:nth-child(4n) {
+    //     padding-right: 0;
+    // }
+}
+.about .team-item div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

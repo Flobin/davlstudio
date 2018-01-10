@@ -1,0 +1,39 @@
+{
+  "name": "assets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Robin <robin@berghuijs.design>",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "browserify": "latest",
+    "del": "latest",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "latest",
+    "gulp-cache": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "latest",
+    "gulp-livereload": "^3.8.1",
+    "gulp-notify": "latest",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "latest",
+    "gulp-sourcemaps": "^2.6.3",
+    "gulp-uglify": "latest",
+    "gulp-util": "^3.0.8",
+    "jshint": "^2.9.5",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "latest",
+    "vinyl-transform": "^1.0.0"
+  },
+  "dependencies": {
+    "baguettebox.js": "^1.9.1",
+    "imagesloaded": "^4.1.4",
+    "masonry-layout": "^4.2.1"
+  }
+}

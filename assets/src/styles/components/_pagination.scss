@@ -1,0 +1,25 @@
+nav.pagination {
+    width: 100%;
+}
+.pagination-item {
+    width: 50%;
+    display: block;
+    &.newer {
+        float: left;
+        text-align: right;
+        padding-right: 5%;
+    }
+    &.older {
+        float: right;
+        padding-left: 5%;
+    }
+}
+.pagination.flip {
+    .newer {
+        float: right;
+    }
+    .older{
+        float: left;
+        text-align: right;
+    }
+}

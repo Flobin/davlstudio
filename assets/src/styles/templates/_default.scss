@@ -1,0 +1,6 @@
+.content {
+    @extend .container;
+    p+h1,p+h2,p+h3,p+h4,p+h5,p+h5 {
+    	margin-top: 1rem;
+    }
+}

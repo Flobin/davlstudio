@@ -1,0 +1,43 @@
+img {
+    // standard
+    @include at-least($L) {
+        transition: filter 0.3s ease-in-out;
+        filter: saturate(30%) opacity(90%);
+    }
+}
+img:hover {
+    @include at-least($L) {
+        filter: none;
+    }
+}
+#baguetteBox-slider img, #baguetteBox-slider figure {
+    @include at-least($L) {
+        filter: none;
+    }
+}
+
+// https://css-tricks.com/touch-devices-not-judged-size/
+@media (hover: hover) {
+    img {
+        transition: filter 0.3s ease-in-out;
+        filter: saturate(20%) opacity(90%);
+    }
+    img:hover {
+        filter: none;
+    }
+    #baguetteBox-slider img, #baguetteBox-slider figure {
+        filter: none;
+    }
+}
+@media (any-hover: none) {
+    img {
+        transition: none;
+        filter: none;
+    }
+    img:hover {
+        filter: none;
+    }
+    #baguetteBox-slider img, #baguetteBox-slider figure {
+        filter: none;
+    }
+}

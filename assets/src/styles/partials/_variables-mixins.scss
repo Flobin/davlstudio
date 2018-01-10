@@ -1,0 +1,165 @@
+$S:   480px;
+$M:  1024px;
+$L:  1440px;
+$XL: 1920px;
+
+$pink:          hsla(333,81%,74%,1);
+$green:         hsla(92,49%,64%,1);
+$orange:        hsla(28,91%,54%,1);
+$andre:         hsla(345,6%,13%,1);
+$grey:          hsla(0,0%,50%,1);
+$fb-blue:       hsla(222,47%,40%,1);
+$insta-magenta: hsla(313,65%,46%,1);
+$li-blue:       hsla(203,100%,35%,1);
+
+$light-grey: lighten($grey, 20%);
+$lighter-grey: lighten($light-grey, 10%);
+$lightest-grey: lighten($lighter-grey, 10%);
+
+$dark-grey: darken($grey, 20%);
+$darker-grey: darken($dark-grey, 10%);
+$darkest-grey: darken($dark-grey, 10%);
+
+$link-color: $grey;
+$link-hover-color: $orange;
+
+$background-color: #fff;
+$text-color: $dark-grey;
+$selection-color: #b4d5fe;
+
+$base-border-radius: 0.125em;
+
+$azo: "azo-sans-web", Futura, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+@mixin at-least($device-width) {
+    @media screen and (min-width: $device-width) {
+        @content
+    }
+}
+
+@mixin until($device-width) {
+    @media screen and (max-width: $device-width - 1) {
+        @content
+    }
+}
+
+%float {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.18),0 2px 10px 0 rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.18),0 2px 10px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.18),0 2px 10px 0 rgba(0,0,0,0.15);
+}
+
+%float-high {
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,0.23),0 4px 15px 0 rgba(0,0,0,0.20);
+    -moz-box-shadow: 0 5px 11px 0 rgba(0,0,0,0.23),0 4px 15px 0 rgba(0,0,0,0.20);
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.23),0 4px 15px 0 rgba(0,0,0,0.20);
+}
+%text-float {
+    -webkit-text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3);
+    -moz-text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+%invisible {
+    visibility: hidden;
+    animation: fadeOut .3s ease-in-out;
+    display: none;
+}
+
+%visible {
+    visibility: visible;
+    animation: fadeIn .3s ease-in-out;
+    display: block;
+}
+
+@keyframes fadeIn {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    1% {
+        display: block;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        display: block;
+        opacity: 0;
+    }
+    1% {
+        opacity: 0;
+    }
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}
+
+// this is for link underlines
+// https://codepen.io/jimmynotjim/pen/EabQjV
+// https://css-tricks.com/styling-underlines-web/
+
+@mixin text-underline-crop($background) {
+  text-shadow:  .03em 0 $background,
+                -.03em 0 $background,
+                0 .03em $background,
+                0 -.03em $background,
+                .06em 0 $background,
+                -.06em 0 $background,
+                .09em 0 $background,
+                -.09em 0 $background,
+                .12em 0 $background,
+                -.12em 0 $background,
+                .15em 0 $background,
+                -.15em 0 $background;
+    transition: all 0.3s ease-in-out;
+}
+
+@mixin text-underline($color-bg, $color-text) {
+  background-image: linear-gradient($color-text, $color-text);
+  background-size: 1px 1px;
+  background-repeat: repeat-x;
+  background-position: 0% 95%;
+  transition: all 0.3s ease-in-out;
+}
+
+@mixin text-selection($selection) {
+  &::selection {
+    @include text-underline-crop($selection);
+
+    background: $selection;
+  }
+
+  &::-moz-selection {
+    @include text-underline-crop($selection);
+
+    background: $selection;
+  }
+}
+
+@mixin link-underline($background, $text, $selection){
+  @include text-underline-crop($background);
+  @include text-underline($background, $text);
+  @include text-selection($selection);
+
+  color: $text;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+
+  *,
+  *:after,
+  &:after,
+  *:before,
+  &:before {
+    text-shadow: none;
+  }
+
+  &:visited {
+    color: $text;
+  }
+}

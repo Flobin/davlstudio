@@ -1,0 +1,22 @@
+title: Nieuws
+
+files: false
+
+options:
+  template: false
+  status: false
+  url: false
+
+pages:
+  template: article
+  sort: flip
+  num: date
+
+fields:
+  title:
+    label: Title
+    type:  text
+
+  about:
+    label: About
+    type:  wysiwyg

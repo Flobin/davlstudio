@@ -1,0 +1,19 @@
+title: Contact
+
+options:
+  template: false
+  
+pages: false
+
+options:
+  delete: false
+  status: false
+
+fields:
+  title:
+    label: Title
+    type: title
+
+  richtext:
+    label: Text
+    type:  wysiwyg

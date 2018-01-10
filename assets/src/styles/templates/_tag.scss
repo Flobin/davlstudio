@@ -1,0 +1,23 @@
+.tag .content {
+    @extend .container;
+}
+.tag-page-title {
+    text-transform: capitalize;
+}
+.tag-projects-title, .tag-articles-title {
+    width: 49%;
+    display: inline-block;
+}
+.tag-projects-title {
+}
+.tag-articles-title {
+    padding-left: 3%;
+}
+
+.tag .pagination {
+    margin: 2rem auto;
+    align-self: flex-end;
+}
+.tag-img {
+    margin-top: 2rem;
+}

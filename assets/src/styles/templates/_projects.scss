@@ -1,0 +1,50 @@
+.projects .main {
+    width: 100%;
+    padding: 0rem 2vw 0 2vw;
+}
+.projects .project {
+    text-align: center;
+    width: 46vw;
+    @include at-least($M) {
+        width: 22.5vw;
+    }
+}
+.projects .project>a {
+    text-decoration: none;
+    &:hover {
+        .project-title {
+            color: $link-hover-color;
+        }
+    }
+}
+.projects .project-title {
+    margin-top: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: $text-color;
+    transition: color 0.3s ease-in-out;
+    @include at-least($M) {
+        font-size: 1.25rem;
+    }
+    @include at-least($L) {
+        font-size: 1rem;
+    }
+}
+.projects .project-thumbnail {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    height: 25.3125vw;
+    @include at-least($M) {
+        height: 12.65625vw;
+    }
+}
+.projects .project-tags {
+    @include at-least($L) {
+        letter-spacing: 0.1rem;
+        font-size: 0.75rem;
+    }
+    @include at-least($XL) {
+        font-size: 0.5rem;
+    }
+}

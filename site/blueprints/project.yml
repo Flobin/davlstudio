@@ -1,0 +1,45 @@
+title: Project
+
+options:
+  template: false
+  
+files:
+  sortable: true
+  fields:
+    alt:
+      label: Alt
+      type:  text
+      default: een afbeelding
+
+pages: false
+
+fields:
+  title:
+    label: Title
+    type:  text
+
+  year:
+    label: Year
+    type:  text
+    width: 1/3
+
+  status:
+    label: Status
+    type:  radio
+    options:
+      gebouwd: gebouwd
+      in aanbouw: in aanbouw
+      planning: planning
+      prijsvraag: prijsvraag
+      on hold: on hold
+    default: false
+    width: 1/3
+
+  client:
+    label: Cliënt
+    type: text
+    width: 1/3
+
+  richtext:
+    label: Text
+    type:  wysiwyg

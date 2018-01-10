@@ -1,0 +1,22 @@
+.site-footer {
+    position: relative;
+    z-index: 999;
+    background-color: $background-color;
+    padding-top: 3rem;
+}
+.footer-copyright {
+    //font-size: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+.social-icon {
+    height: 1.5em;
+    width: 1.5em;
+    display: inline-block;
+    svg {
+        height: 100%;
+        width: 100%;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}

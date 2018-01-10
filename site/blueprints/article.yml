@@ -1,0 +1,43 @@
+title: Article
+
+options:
+  template: false
+
+files:
+  sortable: true
+  fields:
+    alt:
+      label: Alt
+      type:  text
+
+pages: false
+
+fields:
+  title:
+    label: Title
+    type:  title
+
+  date:
+    icon: calendar
+    label: Date
+    type: date
+    format: LL
+    placeholder: Select a date…
+    default: today
+    required: true
+    width: 1/2
+
+  Project:
+    label: Project
+    type:  select
+    options: query
+    query:
+      page: projecten
+      fetch: children
+      value: '{{uid}}'
+      text: '{{title}}'
+    width: 1/2
+
+  richtext:
+    label: Text
+    type:  wysiwyg
