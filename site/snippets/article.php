@@ -2,7 +2,7 @@
     <header class="homepage-article-header lightbox">
         <h2 class="h4 homepage-article-title"><?= $article->title()->html() ?></h2>
 
-        <? if($article->images()): 
+        <? if($article->hasImages()): 
             $images = $article->images(); 
             $firstimage = $images->sortBy('sort', 'asc')->first(); ?>
             <a href="<?= $firstimage->url(); ?>" data-caption="<?= $firstimage->alt()->html(); ?>" class="article-image-link first">
@@ -13,7 +13,7 @@
             <?php foreach($images->not($firstimage) as $image):?>
             <a href="<?= $image->url(); ?>" class="hidden" data-caption="<?= $image->alt()->html(); ?>">
                 <figure class="">
-                    <?= $image->thumb(array('width' => 1)); ?>
+                    <?= $image->thumb(array('width' => 11)); ?>
                 </figure>
             </a>
             <?php endforeach; ?>
@@ -26,12 +26,14 @@
             </a>
         <? elseif($article->project() != ''):
             $projectname = $article->project();
-            $image = page('projecten/' . $projectname)->images()->sortBy('sort', 'asc')->first(); ?>
+            $image = page('projecten/' . $projectname)->images()->sortBy('sort', 'asc')->first(); 
+            if($image):?>
             <a href="<?= $image->url(); ?>" data-caption="<?= $image->alt()->html(); ?>" class="article-image-link">
                 <figure class="homepage-article-image">
                     <?= $image->thumb(array('width' => 600)); ?>
                 </figure>
             </a>
+            <? endif; ?>
         <? endif; ?>
     </header>
 

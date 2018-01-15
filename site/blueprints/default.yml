@@ -8,3 +8,11 @@ fields:
   richtext:
     label: Text
     type:  wysiwyg
+
+  Description:
+    label: Beschrijving
+    type: text
+    placeholder: type hier een korte beschrijving van de pagina (optioneel)
+    width: 1
+    validate: 
+      maxLength: 150

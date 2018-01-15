@@ -1,13 +1,14 @@
 .left-container.standard {
-    width: calc(50% - 2rem);
     float: left;
-    // margin-top: 8rem;
     margin-right: 0;
     padding-bottom: 0;
+    width: calc(50% - 1rem);
+    @include at-least($L) {
+        width: calc(50% - 2rem);
+    }
 }
 .left-container {
     margin-right: calc(50% + 2rem);
-    // padding-bottom: 3rem;
 }
 .left-container.parallax {
     margin-right: 0;
@@ -15,11 +16,11 @@
     position: fixed;
     top: 7rem;
     left: 2.5%;
-    width: calc(48.5% - 2rem);
+    width: calc(48.5% - 1rem);
     z-index: 1;
     @include at-least($M) {
         left: 12.5%;
-        width: calc(37.5% - 2rem);
+        width: calc(37.5% - 1rem);
     }
     @include at-least($L) {
         left: 16.65%;
@@ -31,27 +32,27 @@
     }
 }
 .right-container.standard {
-    width: calc(50% - 2rem);
     float: right;
     margin-left: 0;
+    width: calc(50% - 1rem);
+    @include at-least($L) {
+        width: calc(50% - 2rem);
+    }
 }
 .right-container {
     margin-left: calc(50% + 2rem);
-    // margin-top: 2rem;
 }
 .right-container.parallax {
     margin-left: 0;
     overflow: hidden;
     position: fixed;
     top: 7rem;
-    // padding-top: 2rem;
-    // padding-bottom: 0rem;
     right: 2.5%;
-    width: calc(48.5% - 2rem);
+    width: calc(48.5% - 1rem);
     z-index: 1;
     @include at-least($M) {
         right: 12.5%;
-        width: calc(37.5% - 2rem);
+        width: calc(37.5% - 1rem);
     }
     @include at-least($L) {
         right: 16.65%;

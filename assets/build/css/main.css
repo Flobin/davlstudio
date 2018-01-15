@@ -669,25 +669,25 @@ main {
       -ms-flex: 0 1 auto;
           flex: 0 1 auto; }
 
-.container, .content, .nieuws .content, .home-header, body.about .content, #contactform, .article .content, .project .content, .tag .content {
+.container, .content, .home .content, .home-header, body.about .content, #contactform, .article .content, .project .content, .tag .content {
   width: 100%;
   height: auto;
   margin-left: auto;
   margin-right: auto; }
   @media screen and (max-width: 1023px) {
-    .container, .content, .nieuws .content, .home-header, body.about .content, #contactform, .article .content, .project .content, .tag .content {
+    .container, .content, .home .content, .home-header, body.about .content, #contactform, .article .content, .project .content, .tag .content {
       padding: 0 5%;
       padding: 0 5vw; } }
   @media screen and (min-width: 1024px) {
-    .container, .content, .nieuws .content, .home-header, body.about .content, #contactform, .article .content, .project .content, .tag .content {
+    .container, .content, .home .content, .home-header, body.about .content, #contactform, .article .content, .project .content, .tag .content {
       width: 75%;
       width: 75vw; } }
   @media screen and (min-width: 1440px) {
-    .container, .content, .nieuws .content, .home-header, body.about .content, #contactform, .article .content, .project .content, .tag .content {
+    .container, .content, .home .content, .home-header, body.about .content, #contactform, .article .content, .project .content, .tag .content {
       width: 66.7%;
       width: 66.7vw; } }
   @media screen and (min-width: 1920px) {
-    .container, .content, .nieuws .content, .home-header, body.about .content, #contactform, .article .content, .project .content, .tag .content {
+    .container, .content, .home .content, .home-header, body.about .content, #contactform, .article .content, .project .content, .tag .content {
       width: 50%;
       width: 50vw; } }
 
@@ -984,10 +984,13 @@ nav.pagination {
     margin-bottom: 0; }
 
 .left-container.standard {
-  width: calc(50% - 2rem);
   float: left;
   margin-right: 0;
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  width: calc(50% - 1rem); }
+  @media screen and (min-width: 1440px) {
+    .left-container.standard {
+      width: calc(50% - 2rem); } }
 
 .left-container {
   margin-right: calc(50% + 2rem); }
@@ -998,12 +1001,12 @@ nav.pagination {
   position: fixed;
   top: 7rem;
   left: 2.5%;
-  width: calc(48.5% - 2rem);
+  width: calc(48.5% - 1rem);
   z-index: 1; }
   @media screen and (min-width: 1024px) {
     .left-container.parallax {
       left: 12.5%;
-      width: calc(37.5% - 2rem); } }
+      width: calc(37.5% - 1rem); } }
   @media screen and (min-width: 1440px) {
     .left-container.parallax {
       left: 16.65%;
@@ -1014,9 +1017,12 @@ nav.pagination {
       width: calc(25% - 2rem); } }
 
 .right-container.standard {
-  width: calc(50% - 2rem);
   float: right;
-  margin-left: 0; }
+  margin-left: 0;
+  width: calc(50% - 1rem); }
+  @media screen and (min-width: 1440px) {
+    .right-container.standard {
+      width: calc(50% - 2rem); } }
 
 .right-container {
   margin-left: calc(50% + 2rem); }
@@ -1027,12 +1033,12 @@ nav.pagination {
   position: fixed;
   top: 7rem;
   right: 2.5%;
-  width: calc(48.5% - 2rem);
+  width: calc(48.5% - 1rem);
   z-index: 1; }
   @media screen and (min-width: 1024px) {
     .right-container.parallax {
       right: 12.5%;
-      width: calc(37.5% - 2rem); } }
+      width: calc(37.5% - 1rem); } }
   @media screen and (min-width: 1440px) {
     .right-container.parallax {
       right: 16.65%;
@@ -1262,7 +1268,7 @@ nav.pagination {
     background-color: #333333;
     color: #e6e6e6; }
 
-.nieuws .content {
+.home .content {
   margin-top: 3rem; }
 
 .home-header-link {
@@ -1283,6 +1289,9 @@ nav.pagination {
   @media screen and (min-width: 1024px) {
     .grid-item {
       width: 45%; } }
+  @media screen and (min-width: 1440px) {
+    .grid-item {
+      width: 47.5%; } }
 
 .grid-item.visible, .no-js .grid-item {
   opacity: 1;
@@ -2005,8 +2014,9 @@ textarea.input {
   opacity: 1;
   visibility: visible; }
 
-.project .left-content p {
-  text-align: justify; }
+@media screen and (min-width: 1024px) {
+  .project .left-content p {
+    text-align: justify; } }
 
 .project .left-content blockquote {
   margin-bottom: 1rem;

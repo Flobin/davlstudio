@@ -47,7 +47,7 @@ endforeach ?>
      <h2 class="h4">Instagram</h2>
     <a href="//instagram.com/davlstudio">
         <figure class="homepage-article-image">
-            <img src="/content/nieuws/kiosk_instagram.jpg">
+            <img src="/assets/build/img/kiosk_instagram.jpg">
             <figcaption>Volg ons op Instagram om op de hoogte te blijven van het laatste nieuws.</figcaption>
         </figure>
     </a>

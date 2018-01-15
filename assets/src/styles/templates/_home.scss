@@ -8,7 +8,7 @@
     }
 }
 
-.nieuws .content {
+.home .content {
     @extend .container;
     margin-top: 3rem;
 }
@@ -31,6 +31,10 @@
     @include at-least($M) {
         // margin-bottom: 9vw;
         width: 45%;
+    }
+    @include at-least($L) {
+        // margin-bottom: 9vw;
+        width: 47.5%;
     }
     // @include at-least($L) {
     //     margin-bottom: 7.5vw;

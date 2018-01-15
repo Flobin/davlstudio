@@ -22,7 +22,7 @@ fields:
     label: Date
     type: date
     format: LL
-    placeholder: Select a date…
+    placeholder: Selecteer een datum…
     default: today
     required: true
     width: 1/2
@@ -37,6 +37,14 @@ fields:
       value: '{{uid}}'
       text: '{{title}}'
     width: 1/2
+
+  Description:
+    label: Beschrijving
+    type: text
+    placeholder: type hier een korte beschrijving van het artikel (optioneel)
+    width: 1
+    validate: 
+      maxLength: 150
 
   richtext:
     label: Text

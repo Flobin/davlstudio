@@ -2,7 +2,7 @@ title: Project
 
 options:
   template: false
-  
+
 files:
   sortable: true
   fields:
@@ -39,6 +39,14 @@ fields:
     label: Cliënt
     type: text
     width: 1/3
+
+  Description:
+    label: Beschrijving
+    type: text
+    placeholder: type hier een korte beschrijving van het project (optioneel)
+    width: 1
+    validate: 
+      maxLength: 150
 
   richtext:
     label: Text
