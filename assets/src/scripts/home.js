@@ -5,7 +5,12 @@ var Headroom = require('headroom.js');
 var tags = document.querySelectorAll('.homepage-article-tag');
 var masonryContainer = document.querySelector('.main');
 var showAll = document.querySelector('.show-all');
-var backgroundColors = ['pink','green','orange','dark-blue']
+var backgroundColors = ['pink','green','orange','dark-blue'];
+// var siteHeader = document.querySelector('.site-header');
+var projects = document.querySelector('.home-projects');
+var projectsPosition = projects.offsetTop + outerSize(projects, 'height');
+// console.log(outerSize(projects, 'height'));
+
 
 var msnry = new Masonry( masonryContainer, {
   itemSelector: '.grid-item',
@@ -39,11 +44,13 @@ function DOMContentLoaded() {
     })
   }
 
+  // get projects position
+  projectsPosition = projects.offsetTop + outerSize(projects, 'height');
   // grab an element
   var homeHeader = document.querySelector(".site-header");
   // construct an instance of Headroom, passing the element
   var headroom  = new Headroom(homeHeader, {
-    "offset": 1200,
+    "offset": projectsPosition,
     "tolerance": 10,
     "classes": {
       "initial": "top",
@@ -51,15 +58,31 @@ function DOMContentLoaded() {
       "unpinned": "unpinned"
     }
   });
-  // initialise
+  initialise
   headroom.init();
 
 }
 
 document.addEventListener('DOMContentLoaded', DOMContentLoaded);
 
+
 function forEach(array, callback, scope) {
   for (var i = 0; i < array.length; i++) {
     callback.call(scope, i, array[i]); // passes back stuff we need
   }
 };
+
+function outerSize(el,direction) {
+  var height = el.offsetHeight;
+  var width = el.offsetWidth;
+  var style = getComputedStyle(el);
+
+  height += parseInt(style.marginTop) + parseInt(style.marginBottom);
+  width += parseInt(style.marginLeft) + parseInt(style.marginRight);
+
+  if (direction === 'height') {
+    return height;
+  } else if (direction === 'width') {
+    return width;
+  }
+}

@@ -12,10 +12,7 @@
     transform: translate3d(0,-100%,0);
     transition: transform 0.3s ease-in-out;
 }
-// .home .site-header.unpinned {
-//     transform: translate3d(0,0,0);
-// }
-.home .site-header.headroom--not-top {
+.home .site-header.show {
     transform: translate3d(0,0,0);
 }
 .home .content {
@@ -202,7 +199,7 @@
 }
 .home-project-link {
     width: 20.01%;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     &:nth-child(n+12) {
         margin-bottom: 0;
     }

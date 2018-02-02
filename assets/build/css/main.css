@@ -1877,7 +1877,7 @@ nav.pagination {
   transition: transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out; }
 
-.home .site-header.headroom--not-top {
+.home .site-header.show {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0); }
 
@@ -2129,7 +2129,7 @@ nav.pagination {
 
 .home-project-link {
   width: 20.01%;
-  margin-bottom: 1rem; }
+  margin-bottom: 1.5rem; }
   .home-project-link:nth-child(n+12) {
     margin-bottom: 0; }
 
