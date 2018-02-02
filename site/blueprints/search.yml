@@ -1,0 +1,18 @@
+title: Search
+
+fields:
+  title:
+    label: Titel
+    type:  text
+
+  Description:
+    label: Beschrijving
+    type: Text
+    placeholder: Een korte beschrijving van de pagina (optioneel)
+    width: 1
+    validate: 
+      maxLength: 150
+
+  richtext:
+    label: Tekst
+    type:  wysiwyg

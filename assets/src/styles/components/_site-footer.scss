@@ -2,7 +2,7 @@
     position: relative;
     z-index: 999;
     background-color: $background-color;
-    padding-top: 3rem;
+    padding-top: 2rem;
 }
 .footer-copyright {
     //font-size: 0.75rem;
@@ -18,5 +18,45 @@
     }
     &:hover {
         cursor: pointer;
+    }
+}
+
+.random-content {
+    border-top: 1px solid $light-grey;
+}
+.random-content-title {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: $grey;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    @include at-least($M) {
+        font-size: 1.25rem;
+    }
+    @include at-least($L) {
+        font-size: 1rem;
+    }
+}
+.random-content .project {
+    text-align: center;
+    width: calc(50% - 2rem);
+    @include at-least($M) {
+        width: calc(25% - 3rem);
+    }
+    h4 {
+        margin-top: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        // color: $text-color;
+        transition: color 0.3s ease-in-out;
+        @include at-least($M) {
+            font-size: 1rem;
+        }
+        @include at-least($L) {
+            font-size: 0.75rem;
+        }
+    }
+    .project-thumbnail {
+        height: 7.5rem;
     }
 }

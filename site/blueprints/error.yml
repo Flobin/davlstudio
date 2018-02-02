@@ -12,5 +12,5 @@ fields:
     type:  textarea
 
   richtext:
-    label: Text
+    label: Tekst
     type:  wysiwyg

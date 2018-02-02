@@ -1,0 +1,27 @@
+title: Over
+
+options:
+  template: false
+  status: false
+  url: false
+
+fields:
+  title:
+    label: Titel
+    type:  text
+
+  richtext:
+    label: Tekst
+    type:  wysiwyg
+
+  partners:
+    label: partners
+    type:  wysiwyg
+
+  Description:
+    label: Beschrijving
+    type: Text
+    placeholder: Een korte beschrijving van de pagina (optioneel)
+    width: 1
+    validate: 
+      maxLength: 150

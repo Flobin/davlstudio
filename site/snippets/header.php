@@ -50,39 +50,41 @@
 </head>
 <body id="body" class="<?= $page->template() ?>">
 
-    <? if ($page->template() != "home"): ?>
-        <header class="site-header" role="banner">
+    
+    <header class="site-header" role="banner">
 
-            <div class="container">
+        <div class="container">
 
-                <a href="/">
-                    <img src="/assets/build/img/header_logo_text.svg" id="logo" alt="Click this DAVL Studio logo to go to the home page" role="img">
-                </a>
+            <a href="/" class="site-logo">
+                <img src="/assets/build/img/logo.svg" id="logo" alt="Click this DAVL Studio logo to go to the home page" role="img">
+            </a>
 
-                <div class="menu-container">
-                    <input id="menu-toggle" type="checkbox" name="menu-toggle">
-                    <label class="toggle-container" for="menu-toggle">
-                        <span class="toggle-button"></span>
-                    </label>
+            <? if ($page->template() != "home"): ?><h1 class="page-title"><?= $page->title()->html() ?></h1><? endif; ?>
 
-                    <nav class="menu" role="menu">
-                        <a class="menu-item" href="/projecten">projecten</a>
-                        <a class="menu-item" href="/contact">contact</a>
-                        <a class="menu-item" href="/over">over ons</a>
-                    </nav>
-                </div>
+            <div class="menu-container">
+                <input id="menu-toggle" type="checkbox" name="menu-toggle">
+                <label class="toggle-container" for="menu-toggle">
+                    <span class="toggle-button"></span>
+                </label>
 
-                <? // if ($page->template() == "project" || $page->template() == "default" || $page->template() == "contact"): ?>
-                <h1 class="page-title"><?= $page->title()->html() ?></h1>
-                <? // endif ?>
+                <nav class="menu" role="menu">
+                    <a class="menu-item" href="/projecten">projecten</a>
+                    <a class="menu-item" href="/contact">contact</a>
+                    <a class="menu-item" href="/over">over ons</a>
+                    <a class="menu-item" href="/zoek">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112.2 112.2" id="search-icon"><path fill="gray" d="M105.6 104.2L80.1 78.7c5.3-7 8.2-15.6 8.2-24.6 0-10.9-4.2-21.2-12-28.9-15.9-15.9-41.8-15.9-57.8 0C2.7 41.1 2.7 67.1 18.6 83c8 8 18.4 11.9 28.9 11.9 8.7 0 17.3-2.7 24.6-8.2l25.5 25.5 8-8zM26.6 75C21 69.4 18 62 18 54.1c0-7.9 3.1-15.3 8.6-20.9s13-8.6 20.9-8.6c7.9 0 15.3 3.1 20.9 8.6 5.6 5.6 8.6 13 8.6 20.9 0 7.9-3.1 15.3-8.6 20.9-5.6 5.6-13 8.6-20.9 8.6-7.9 0-15.3-3.1-20.9-8.6z"/></svg>
+                    </a>
+                </nav>
             </div>
 
-        </header>
-    <? else: ?>
+        </div>
+
+    </header>
+    <? if ($page->template() == "home"): ?>
     <header class="home-header" role="banner">
 
         <a class="home-header-link" href="/">
-            <img src="/assets/build/img/home_header.svg" id="home-header-image" alt="Click this DAVL Studio logo to go to the home page" role="img">
+            <?= file_get_contents("http://davl.berghuijs.design/assets/build/img/home-header.svg"); ?>
         </a>
 
     </header>

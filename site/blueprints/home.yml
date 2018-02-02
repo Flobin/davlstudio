@@ -18,5 +18,5 @@ fields:
     type:  text
 
   about:
-    label: About
+    label: Over
     type:  wysiwyg

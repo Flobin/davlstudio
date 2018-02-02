@@ -1,24 +1,80 @@
 .site-header {
-    transition: transform 0.3s ease-in-out;
-    will-change: transform;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index:999;
     height: 7rem;
-    background: #fff;
+    background-color: $background-color;
+}
+.site-logo {
+    float: left;
+    margin-right: 1rem;
+    margin-top: 1.5rem;
 }
 #logo {
-    height: 2rem;
-    width: auto;
-    display: inline-block;
+    height: 3rem;
     margin-right: 1rem;
-    margin-top: 1rem;
+    width: auto;
 }
+
+// .home .site-header {
+//     position: absolute;
+// }
+// .home .site-header .container {
+//     background-color: $green;
+//     height: 7rem;
+//     padding: 2rem;
+//     color: #fff;
+//     position: relative;
+// }
+// .home-title {
+//     position: absolute;
+//     top: 2rem;
+//     left: 15%;
+// }
+// .home-logo {
+//     position: absolute;
+//     right: -1rem;
+//     bottom: -2rem;
+// }
+// #home-title-img {
+//     height: 3rem;
+//     width: auto;
+// }
+// #home-logo-img {
+//     height: 8rem;
+//     width: auto;
+// }
+
+.home-header{
+    @extend .container;
+}
+.home-header-link {
+    display: block;
+    width: 100%;
+}
+#home-header-img {
+    .g {
+        fill: $green;
+    }
+    .w {
+        fill: #fff;
+    }
+}
+
+.page-title {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    display: block;
+    float: left;
+    margin-top: 2rem;
+}
+
 .menu-container {
     float: right;
     position: relative;
+    margin-top: 1rem;
     @include at-least($M) {
         height: 4rem;
         // opacity: 0;
@@ -26,6 +82,9 @@
         // visibility: hidden;
     }
 }
+// .home .menu-container {
+//     margin-top: 0;
+// }
 .menu-item {
     display: inline-block;
     text-transform: uppercase;
@@ -43,6 +102,19 @@
     }
     &:last-child {
         margin-right: 0;
+    }
+}
+
+#search-icon {
+    width: 1em;
+    height: 1em;
+    display: inline;
+    position: relative;
+    top: 0.15em;
+    &:hover {
+        path {
+            fill: $link-hover-color;
+        }
     }
 }
 
@@ -128,6 +200,11 @@ $transition-delay: 0.05s;
                 opacity: 0;
             }
         }
+    }
+}
+.menu-item:nth-child(n+4) {
+    @include until($M) {
+        display: none;
     }
 }
 #menu-toggle:checked{
@@ -247,12 +324,4 @@ $transition-delay: 0.05s;
             transition: $transition-duration;
         }
     }
-}
-
-.page-title {
-    margin-top: 1rem;
-    margin-bottom: 0;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    margin-bottom: 1rem;
 }

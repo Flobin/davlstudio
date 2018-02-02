@@ -14,12 +14,12 @@ pages: false
 
 fields:
   title:
-    label: Title
+    label: Titel
     type:  title
 
   date:
     icon: calendar
-    label: Date
+    label: Datum
     type: date
     format: LL
     placeholder: Selecteer een datum…
@@ -47,5 +47,5 @@ fields:
       maxLength: 150
 
   richtext:
-    label: Text
+    label: Tekst
     type:  wysiwyg

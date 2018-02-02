@@ -1,12 +1,7 @@
 .project .content {
     @extend .container;
 }
-// .project-title h1 {
-//     margin-top: 0;
-//     text-transform: uppercase;
-//     letter-spacing: 0.2rem;
-//     margin-bottom: 1rem;
-// }
+
 .project-meta {
     display: block;
     font-size: 0.75em;
@@ -35,12 +30,16 @@
 }
 
 .project .left-content p {
-    @include at-least($M) {
-        text-align: justify;
-    }
+    text-align: justify;
 }
 .project .left-content blockquote {
     margin-bottom: 1rem;
     font-style: italic;
     color: $grey;
+}
+.project .left-content a {
+    @include link-underline($background-color, $text-color, $selection-color);
+    &:hover {
+        @include link-underline($background-color, $link-hover-color, $selection-color);
+    }
 }

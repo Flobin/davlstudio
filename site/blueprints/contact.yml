@@ -11,9 +11,9 @@ options:
 
 fields:
   title:
-    label: Title
+    label: Titel
     type: title
 
   richtext:
-    label: Text
+    label: Tekst
     type:  wysiwyg

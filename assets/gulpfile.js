@@ -27,16 +27,16 @@ gulp.task('styles', function() {
   .pipe(notify({ message: 'Styles task complete' }));
 });
 
-gulp.task('contact-scripts', function () {
+gulp.task('form-scripts', function () {
   var b = browserify({
     entries: [
-      'src/scripts/contact.js',
+      'src/scripts/form.js',
     ],
     debug: true,
   });
 
   return b.bundle()
-    .pipe(source('contact.js'))
+    .pipe(source('form.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
         // Add transformation tasks to the pipeline here.
@@ -44,7 +44,7 @@ gulp.task('contact-scripts', function () {
         .on('error', gutil.log)
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('build/js/'))
-    .pipe(notify({ message: 'Contact-scripts task complete' }));
+    .pipe(notify({ message: 'form-scripts task complete' }));
 });
 
 gulp.task('home-scripts', function () {
@@ -52,7 +52,8 @@ gulp.task('home-scripts', function () {
     entries: [
       'src/scripts/home.js',
       'node_modules/imagesloaded/imagesloaded.js',
-      'node_modules/masonry-layout/masonry.js'
+      'node_modules/masonry-layout/masonry.js',
+      'node_modules/headroom.js/dist/headroom.js'
     ],
     debug: true,
   });
@@ -130,14 +131,14 @@ gulp.task('clean', function() {
 });
 
 gulp.task('default', ['clean'], function() {
-  gulp.start('styles', 'contact-scripts', 'parallax-scripts', 'home-scripts', 'lightbox-scripts', 'images');
+  gulp.start('styles', 'form-scripts', 'parallax-scripts', 'home-scripts', 'lightbox-scripts', 'images');
 });
 
 gulp.task('watch', function() {
   // Watch .scss files
   gulp.watch('src/styles/**/*.scss', ['styles']);
   // Watch .js files
-  gulp.watch('src/scripts/**/*.js', ['contact-scripts', 'home-scripts', 'parallax-scripts', 'lightbox-scripts']);
+  gulp.watch('src/scripts/**/*.js', ['form-scripts', 'home-scripts', 'parallax-scripts', 'lightbox-scripts']);
   // Watch image files
   gulp.watch('src/images/**/*', ['images']);
   // Create LiveReload server

@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "baguettebox.js": "^1.9.1",
+    "headroom.js": "^0.9.4",
     "imagesloaded": "^4.1.4",
     "masonry-layout": "^4.2.1"
   }

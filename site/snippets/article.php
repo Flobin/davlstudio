@@ -1,6 +1,7 @@
 <article class="homepage-article <?= $article->project(); ?> grid-item grid-sizer">
     <header class="homepage-article-header lightbox">
-        <h2 class="h4 homepage-article-title"><?= $article->title()->html() ?></h2>
+        <a href="<?= $article->url() ?>"><h2 class="h4 homepage-article-title"><?= $article->title()->html() ?></h2></a>
+        <time class="homepage-article-date"><?= $article->date('d/m/Y') ?></time>
 
         <? if($article->hasImages()): 
             $images = $article->images(); 
@@ -43,7 +44,7 @@
 
     <? if($article->project() != ''): ?>
     <nav class="homepage-article-link">
-        <a class="button" href="projecten/<?= $article->project(); ?>">meer <?= $article->project(); ?> &rarr;</a>
+        <a class="button" href="projecten/<?= $article->project(); ?>">meer <?= $article->project()->title(); ?> &rarr;</a>
     </nav>
     <? endif; ?>
 </article>

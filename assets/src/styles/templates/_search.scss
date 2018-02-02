@@ -1,0 +1,16 @@
+.search .content {
+    padding-top: 4rem;
+}
+.search-input, .search-submit {
+    width: calc(50% - 2rem);
+}
+.search-results {
+    flex-direction: column;
+}
+#search-results-title {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+.search-result {
+    font-size: 1rem;
+}

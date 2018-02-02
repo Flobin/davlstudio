@@ -1,16 +1,16 @@
 function DOMContentLoaded() {
 
-  if (contactForm) {
-    contactFormInputs();
+  if (form) {
+    formInputs();
   }
 
 }
 
 document.addEventListener('DOMContentLoaded', DOMContentLoaded);
 
-var contactForm = document.querySelector('#contactform');
+var form = document.querySelector('.form');
 
-function contactFormInputs() {
+function formInputs() {
 
     var formInputs = document.querySelectorAll( '.input' );
     forEach(formInputs, function(index, element) {

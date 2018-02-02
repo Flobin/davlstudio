@@ -6,19 +6,7 @@
 
         <section class="left-container standard">
             <div class="left-content">
-                <aside class="project-meta">
-                    <ul>
-                        <li class="project-year">
-                            Wanneer: <?= $page->year() ?>
-                        </li>
-                        <li class="project-status">
-                            Status: <?= $page->status() ?>
-                        </li>
-                        <li class="project-client">
-                            Cliënt: <?= $page->client() ?>
-                        </li>
-                    </ul>
-                </aside>
+                <?php snippet('project_info') ?>
                 <?= $page->richtext()->kirbytext() ?>
             </div>
         </section>

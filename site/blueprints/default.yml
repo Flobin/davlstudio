@@ -1,18 +1,18 @@
-title: Page
+title: Pagina
 
 fields:
   title:
-    label: Title
+    label: Titel
     type:  text
 
   richtext:
-    label: Text
+    label: Tekst
     type:  wysiwyg
 
   Description:
     label: Beschrijving
-    type: text
-    placeholder: type hier een korte beschrijving van de pagina (optioneel)
+    type: Text
+    placeholder: Een korte beschrijving van de pagina (optioneel)
     width: 1
     validate: 
       maxLength: 150

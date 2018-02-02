@@ -1,6 +1,26 @@
     <footer class="site-footer" role="contentinfo">
 
-        <p class="footer-copyright">© DAVL Studio</p>
+        <?php if ($page->template() == "project" || $page->template() == "article"):
+            $featured = $pages->find('projecten')->children()->shuffle()->limit(4); ?>
+
+            <div class="random-content container">
+                <h3 class="random-content-title">Meer projecten</h3>
+                <ul class="collection">
+                  <?php foreach($featured as $project): ?>
+                  <li class="collection-item project">
+                    <a href="<?php echo $project->url() ?>">
+                        <img src="<?= $project->images()->sortBy('sort', 'asc')->first()->thumb(array('width' => 300))->url() ?>" alt="Thumbnail for the project <?= $project->title()->html() ?>" class="project-thumbnail" />
+                    </a>
+                    <h4><?php echo $project->title() ?></h4>
+                  </li>
+                  <?php endforeach ?>
+                </ul>
+            </div>
+
+        <?php endif ?>
+
+
+        <p class="footer-copyright">DAVL Studio © <?= date("Y"); ?></p>
 
         <p class="footer-social">
             <a href="https://www.facebook.com/DAVLstudio/" class="facebook social-icon">
@@ -19,13 +39,13 @@
     <? if ($page->isHomePage() || $page->template() == "nieuws"): ?>
         <script src="/assets/build/js/home.js"></script>
     <? endif ?>
-    <? if ($page->template() == "contact"): ?>
-        <script src="/assets/build/js/contact.js"></script>
+    <? if ($page->template() == "contact" || $page->template() == "search"): ?>
+        <script src="/assets/build/js/form.js"></script>
     <? endif ?>
     <? if ($page->template() == "project" || $page->template() == "article" || $page->isHomePage() || $page->template() == "nieuws"): ?>
         <script src="/assets/build/js/lightbox.js"></script>
     <? endif ?>
-    <? if ($page->template() == "project"): ?>
+    <? if ($page->template() != "nieuws" && $page->template() != "projects"): ?>
         <script src="/assets/build/js/parallax.js"></script>
     <? endif ?>
 </body>
