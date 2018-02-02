@@ -9,8 +9,6 @@ var backgroundColors = ['pink','green','orange','dark-blue'];
 // var siteHeader = document.querySelector('.site-header');
 var projects = document.querySelector('.home-projects');
 var projectsPosition = projects.offsetTop + outerSize(projects, 'height');
-// console.log(outerSize(projects, 'height'));
-
 
 var msnry = new Masonry( masonryContainer, {
   itemSelector: '.grid-item',
