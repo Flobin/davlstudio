@@ -18,6 +18,7 @@ Icon?
 # -------------SECURITY-------------
 # NEVER publish these files via Git!
 # -------------SECURITY-------------
+/site/config/config.php
 
 # Kirby accounts
 # ---------------
@@ -35,8 +36,8 @@ Icon?
 
 # Plugins
 # ---------------
-/site/plugins
-/site/fields
+# /site/plugins
+# /site/fields
 
 # Vendor
 # ---------------
