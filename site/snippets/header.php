@@ -4,13 +4,14 @@
 
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src https:">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
     <title>DAVL Studio | Architectuur, Strategie, Ontwikkeling <? if ($page->isHomePage()) { } else { echo '| ' . $page->title()->html(); } ?></title>
     <meta name="description" content="<?= $site->description()->html() ?>">
 
     <link rel="stylesheet" href="https://use.typekit.net/oms7gsw.css">
-    <?= css('assets/build/css/main.css') ?>
+    <link rel="stylesheet" href="/assets/build/css/main.css">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
@@ -24,7 +25,7 @@
     <meta name="theme-color" content="#4d4d4d">
 
     <? $pageDescription = 'DAVL Studio | Architectuur, Strategie, Ontwikkeling';
-    $pageImageUrl = 'http://davlstudio.com/assets/build/img/kiosk_instagram.jpg';
+    $pageImageUrl = '//davlstudio.com/assets/build/img/kiosk_instagram.jpg';
     if ($page->description()) {
         $pageDescription = $page->description();
     }
@@ -84,7 +85,7 @@
     <header class="home-header" role="banner">
 
         <a class="home-header-link" href="/">
-            <?= file_get_contents("http://davl.berghuijs.design/assets/build/img/home-header.svg"); ?>
+            <?= file_get_contents("http://www.davlstudio.com/assets/build/img/home-header.svg"); ?>
         </a>
 
     </header>

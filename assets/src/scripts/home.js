@@ -56,7 +56,6 @@ function DOMContentLoaded() {
       "unpinned": "unpinned"
     }
   });
-  initialise
   headroom.init();
 
 }

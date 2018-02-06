@@ -1877,7 +1877,7 @@ nav.pagination {
   transition: transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out; }
 
-.home .site-header.show {
+.home .site-header.unpinned, .home .site-header.headroom--not-top.pinned {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0); }
 
@@ -2442,7 +2442,7 @@ nav.pagination {
   letter-spacing: 0.2rem;
   background: #e6e6e6;
   padding: 1rem;
-  margin-bottom: 1rem; }
+  margin-bottom: 2rem; }
   .project-meta h3 {
     margin-top: 0; }
   .project-meta ul {

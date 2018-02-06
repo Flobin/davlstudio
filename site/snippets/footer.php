@@ -45,7 +45,7 @@
     <? if ($page->template() == "project" || $page->template() == "article" || $page->isHomePage() || $page->template() == "nieuws"): ?>
         <script src="/assets/build/js/lightbox.js"></script>
     <? endif ?>
-    <? if ($page->template() != "nieuws" && $page->template() != "projects"): ?>
+    <? if ($page->template() != "home" && $page->template() != "projects"): ?>
         <script src="/assets/build/js/parallax.js"></script>
     <? endif ?>
 </body>

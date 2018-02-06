@@ -12,30 +12,13 @@
     transform: translate3d(0,-100%,0);
     transition: transform 0.3s ease-in-out;
 }
-.home .site-header.show {
+.home .site-header.unpinned, .home .site-header.headroom--not-top.pinned {
     transform: translate3d(0,0,0);
 }
 .home .content {
     @extend .container;
     margin-top: 3rem;
 }
-
-// .home .menu-item, .home .menu-item:visited {
-//     color: #fff;
-//     &:hover, &:active {
-//         color: $link-hover-color;
-//     }
-// }
-// .home #search-icon path {
-//     fill: #fff;
-//     &:hover, &:active {
-//         fill: $link-hover-color;
-//     }
-// }
-// .home .menu-item:hover #search-icon path,
-// .home .menu-item:active #search-icon path {
-//     fill: $link-hover-color;
-// }
 
 .grid-item {
     margin-bottom: 3rem;

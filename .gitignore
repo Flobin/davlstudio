@@ -2,6 +2,10 @@
 # ------------
 Icon
 .DS_Store
+"Icon\r"
+Icon?
+.well-known
+.dropbox
 
 # Temporary files
 # ---------------
