@@ -85,7 +85,7 @@
     <header class="home-header" role="banner">
 
         <a class="home-header-link" href="/">
-            <?= file_get_contents("http://www.davlstudio.com/assets/build/img/home-header.svg"); ?>
+            <?= file_get_contents("//davlstudio.com/assets/build/img/home-header.svg"); ?>
         </a>
 
     </header>
