@@ -18,7 +18,8 @@ Icon?
 # -------------SECURITY-------------
 # NEVER publish these files via Git!
 # -------------SECURITY-------------
-/site/config/config.php
+# /site/config/config.php
+/site/config/config.davlstudio.com.php
 
 # Kirby accounts
 # ---------------
