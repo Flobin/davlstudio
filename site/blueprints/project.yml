@@ -9,7 +9,6 @@ files:
     alt:
       label: Alt
       type:  text
-      default: een afbeelding
 
 pages: false
 

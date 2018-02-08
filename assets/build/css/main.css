@@ -1203,8 +1203,7 @@ body {
           flex: 0 1 auto; }
   @media screen and (min-width: 1024px) {
     .site-footer {
-      padding-top: 3rem;
-      padding-bottom: 3rem; } }
+      padding-bottom: 1.5rem; } }
 
 main {
   -webkit-box-flex: 0;
@@ -1510,8 +1509,7 @@ main {
 .site-footer {
   position: relative;
   z-index: 999;
-  background-color: #fff;
-  padding-top: 2rem; }
+  background-color: #fff; }
 
 .footer-copyright {
   margin-bottom: 1.5rem; }
@@ -1860,12 +1858,12 @@ nav.pagination {
 .content p + h1, .content p + h2, .content p + h3, .content p + h4, .content p + h5, .content p + h5 {
   margin-top: 1rem; }
 
-.homepage-article.about section, .homepage-article.social, .home-projects-list, .home-contact section {
+.homepage-article.about section, .homepage-article.social, .home-contact section {
   background-color: #cccccc;
   color: #fff;
   -webkit-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; }
-  .homepage-article.about section:hover, .homepage-article.social:hover, .home-projects-list:hover, .home-contact section:hover, .homepage-article.about section:focus, .homepage-article.social:focus, .home-projects-list:focus, .home-contact section:focus, .homepage-article.about section:active, .homepage-article.social:active, .home-projects-list:active, .home-contact section:active {
+  .homepage-article.about section:hover, .homepage-article.social:hover, .home-contact section:hover, .homepage-article.about section:focus, .homepage-article.social:focus, .home-contact section:focus, .homepage-article.about section:active, .homepage-article.social:active, .home-contact section:active {
     background-color: #cccccc;
     color: #fff; }
 
@@ -2117,7 +2115,6 @@ nav.pagination {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 2rem;
   margin: 1rem 0; }
 
 #body .home-projects-list a,

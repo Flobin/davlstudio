@@ -19,8 +19,7 @@ body {
     align-self: flex-end;
     flex: 0 1 auto;
     @include at-least($M) {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
+        padding-bottom: 1.5rem;
     }
 }
 main {

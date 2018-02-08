@@ -168,8 +168,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    @extend %homepage-dark-bg;
-    padding: 2rem;
+    // @extend %homepage-dark-bg;
+    // padding: 2rem;
     margin: 1rem 0;
     // background-color: $dark-blue;
 }

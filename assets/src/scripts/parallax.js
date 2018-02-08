@@ -15,7 +15,7 @@ function DOMContentLoaded() {
     var rem = parseFloat(getComputedStyle(document.body).fontSize);
     var rightHeight = outerSize(rightContent, 'height');
     var leftHeight = outerSize(leftContent, 'height');
-    var safeMargin = 5 * rem;
+    var safeMargin = 1 * rem;
     var minHeight = window.innerHeight - outerSize(document.querySelector('.site-header'), 'height') - outerSize(document.querySelector('.site-footer'), 'height') + safeMargin;
 
     if ( rightHeight > minHeight || leftHeight > minHeight ) {
@@ -70,7 +70,7 @@ function scroll(minHeight, side, rem) {
   // apply parallax
   var parallaxHeight = scrollContainer.clientHeight;
   var parallaxContentHeight = scrollContainer.scrollHeight; 
-  var parallaxOffset = (parallaxHeight - minHeight) * normalized + normalized * 3 * rem;
+  var parallaxOffset = (parallaxHeight - minHeight) * normalized + normalized * -1 * rem;
   scrollContent.style.transform = "translate3D(0,-" + parallaxOffset + "px,0)";
   
   requestAnimationFrame(function() {

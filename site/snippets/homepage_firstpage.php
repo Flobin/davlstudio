@@ -15,7 +15,7 @@ endforeach ?>
     <section class="home-projects-list">
         <? $projects = page('projecten')->children()->visible()->shuffle()->limit(16);
         foreach($projects as $project): ?>
-            <a href="<?= $project->url() ?>" class="home-project-link">
+            <a href="/projecten" class="home-project-link">
                 <img src="<?= $project->images()->sortBy('sort', 'asc')->first()->thumb(array('width' => 150, 'crop' => true))->url() ?>" alt="Thumbnail for <?= $project->title()->html() ?>" class="home-project-image" />
             </a>
         <? endforeach; ?>
