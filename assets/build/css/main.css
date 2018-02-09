@@ -1547,17 +1547,15 @@ main {
     .random-content .project {
       width: calc(25% - 3rem); } }
   .random-content .project h4 {
+    display: block;
+    width: 100%;
+    overflow-x: hidden;
     margin-top: 0.5rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     -webkit-transition: color 0.3s ease-in-out;
-    transition: color 0.3s ease-in-out; }
-    @media screen and (min-width: 1024px) {
-      .random-content .project h4 {
-        font-size: 1rem; } }
-    @media screen and (min-width: 1440px) {
-      .random-content .project h4 {
-        font-size: 0.75rem; } }
+    transition: color 0.3s ease-in-out;
+    font-size: 0.75rem; }
   .random-content .project .project-thumbnail {
     height: 7.5rem; }
 
@@ -1581,81 +1579,6 @@ nav.pagination {
 .pagination.flip .older {
   float: left;
   text-align: right; }
-
-.left-container.standard {
-  float: left;
-  margin-right: 0;
-  padding-bottom: 0;
-  width: calc(50% - 1rem); }
-  @media screen and (min-width: 1440px) {
-    .left-container.standard {
-      width: calc(50% - 2rem); } }
-
-.left-container {
-  margin-right: calc(50% + 2rem); }
-
-.left-container.parallax {
-  margin-right: 0;
-  overflow: hidden;
-  position: fixed;
-  top: 7rem;
-  left: 2.5%;
-  width: calc(48.5% - 1rem);
-  z-index: 1; }
-  @media screen and (min-width: 1024px) {
-    .left-container.parallax {
-      left: 12.5%;
-      width: calc(37.5% - 1rem); } }
-  @media screen and (min-width: 1440px) {
-    .left-container.parallax {
-      left: 16.65%;
-      width: calc(33.35% - 2rem); } }
-  @media screen and (min-width: 1920px) {
-    .left-container.parallax {
-      left: 25%;
-      width: calc(25% - 2rem); } }
-
-.right-container.standard {
-  float: right;
-  margin-left: 0;
-  width: calc(50% - 1rem); }
-  @media screen and (min-width: 1440px) {
-    .right-container.standard {
-      width: calc(50% - 2rem); } }
-
-.right-container {
-  margin-left: calc(50% + 2rem); }
-
-.right-container.parallax {
-  margin-left: 0;
-  overflow: hidden;
-  position: fixed;
-  top: 7rem;
-  right: 2.5%;
-  width: calc(48.5% - 1rem);
-  z-index: 1; }
-  @media screen and (min-width: 1024px) {
-    .right-container.parallax {
-      right: 12.5%;
-      width: calc(37.5% - 1rem); } }
-  @media screen and (min-width: 1440px) {
-    .right-container.parallax {
-      right: 16.65%;
-      width: calc(33.35% - 2rem); } }
-  @media screen and (min-width: 1920px) {
-    .right-container.parallax {
-      right: 25%;
-      width: calc(25% - 2rem); } }
-
-.project-img, .article-image-link {
-  margin-bottom: 2rem;
-  display: block; }
-  .project-img:last-child, .article-image-link:last-child {
-    margin-bottom: 0; }
-
-.right-content img {
-  display: block;
-  width: 100%; }
 
 /*!
  * baguetteBox.js
@@ -2432,6 +2355,61 @@ nav.pagination {
   .projects .project-tags {
     font-size: 0.5rem; } }
 
+.left-content {
+  float: left;
+  margin-right: 0;
+  padding-bottom: 0;
+  width: calc(50% - 1rem); }
+  @media screen and (min-width: 1440px) {
+    .left-content {
+      width: calc(50% - 2rem); } }
+  .left-content.fixed {
+    overflow: hidden;
+    position: fixed;
+    top: 7rem;
+    left: 2.5%;
+    width: calc(48.5% - 1rem);
+    z-index: 1; }
+    @media screen and (min-width: 1024px) {
+      .left-content.fixed {
+        left: 12.5%;
+        width: calc(37.5% - 1rem); } }
+    @media screen and (min-width: 1440px) {
+      .left-content.fixed {
+        left: 16.65%;
+        width: calc(33.35% - 2rem); } }
+    @media screen and (min-width: 1920px) {
+      .left-content.fixed {
+        left: 25%;
+        width: calc(25% - 2rem); } }
+
+.right-content {
+  float: right;
+  margin-left: 0;
+  width: calc(50% - 1rem); }
+  @media screen and (min-width: 1440px) {
+    .right-content {
+      width: calc(50% - 2rem); } }
+  .right-content.fixed {
+    overflow: hidden;
+    position: fixed;
+    top: 7rem;
+    right: 2.5%;
+    width: calc(48.5% - 1rem);
+    z-index: 1; }
+    @media screen and (min-width: 1024px) {
+      .right-content.fixed {
+        right: 12.5%;
+        width: calc(37.5% - 1rem); } }
+    @media screen and (min-width: 1440px) {
+      .right-content.fixed {
+        right: 16.65%;
+        width: calc(33.35% - 2rem); } }
+    @media screen and (min-width: 1920px) {
+      .right-content.fixed {
+        right: 25%;
+        width: calc(25% - 2rem); } }
+
 .project-meta {
   display: block;
   font-size: 0.75em;
@@ -2447,13 +2425,13 @@ nav.pagination {
     letter-spacing: normal;
     list-style-type: none; }
 
-.project .right-container {
+.project .right-content {
   opacity: 0;
   visibility: hidden;
   -webkit-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out; }
 
-.project .right-container.visible, .no-js .project .right-container {
+.project .right-content.visible, .no-js .project .right-content {
   opacity: 1;
   visibility: visible; }
 
@@ -2533,6 +2511,16 @@ nav.pagination {
       text-shadow: none; }
     .project .left-content a:hover:visited {
       color: #f4831f; }
+
+.project-img, .article-image-link {
+  margin-bottom: 2rem;
+  display: block; }
+  .project-img:last-child, .article-image-link:last-child {
+    margin-bottom: 0; }
+
+.right-content img {
+  display: block;
+  width: 100%; }
 
 .search .content {
   padding-top: 4rem; }

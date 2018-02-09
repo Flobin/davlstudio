@@ -7,10 +7,6 @@ fields:
     label: Title
     type:  text
 
-  intro:
-    label: Intro
-    type:  textarea
-
   richtext:
     label: Tekst
     type:  wysiwyg

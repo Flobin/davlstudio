@@ -4,7 +4,7 @@
             $featured = $pages->find('projecten')->children()->shuffle()->limit(4); ?>
 
             <div class="random-content container">
-                <h3 class="random-content-title">Meer projecten</h3>
+                <a href="/projecten"><h3 class="random-content-title">Meer projecten</h3></a>
                 <ul class="collection">
                   <?php foreach($featured as $project): ?>
                   <li class="collection-item project">
@@ -38,13 +38,13 @@
 
     <? if ($page->isHomePage() || $page->template() == "nieuws"): ?>
         <script src="/assets/build/js/home.js"></script>
-    <? endif ?>
+    <? endif; ?>
     <? if ($page->template() == "contact" || $page->template() == "search"): ?>
         <script src="/assets/build/js/form.js"></script>
-    <? endif ?>
+    <? endif; ?>
     <? if ($page->template() == "project" || $page->template() == "article" || $page->isHomePage() || $page->template() == "nieuws"): ?>
         <script src="/assets/build/js/lightbox.js"></script>
-    <? endif ?>
+    <? endif; ?>
     <? if ($page->template() != "home" && $page->template() != "projects"): ?>
         <script src="/assets/build/js/parallax.js"></script>
     <? endif ?>

@@ -494,16 +494,14 @@ return ImagesLoaded;
 },{"ev-emitter":1}],3:[function(require,module,exports){
 var imagesLoaded = require('imagesloaded');
 
-var rightContainer = document.querySelector('.right-container');
 var rightContent = document.querySelector('.right-content');
-var leftContainer = document.querySelector('.left-container');
 var leftContent = document.querySelector('.left-content');
-var minHeight = document.querySelector('.content article');
+var minHeight;
 
 function DOMContentLoaded() {
 
   imagesLoaded(rightContent, { background: true }, function() {
-    rightContainer.classList.add('visible');
+    rightContent.classList.add('visible');
     
     // get sizes
     var rem = parseFloat(getComputedStyle(document.body).fontSize);
@@ -512,66 +510,21 @@ function DOMContentLoaded() {
     var safeMargin = 1 * rem;
     var minHeight = window.innerHeight - outerSize(document.querySelector('.site-header'), 'height') - outerSize(document.querySelector('.site-footer'), 'height') + safeMargin;
 
-    if ( rightHeight > minHeight || leftHeight > minHeight ) {
-      // at least one element tall enough
-      rightContainer.classList.remove('standard');
-      leftContainer.classList.remove('standard');
-
-      if ( rightHeight > minHeight && leftHeight > minHeight ) {
-        // both elements taller than minHeight
-        
-        if ( rightHeight > leftHeight ) {
-          rightContainer.classList.add('parallax');
-          scroll(minHeight, 'right', rem);
-        } else if ( leftHeight > rightHeight ) {
-          leftContainer.classList.add('parallax');
-          scroll(minHeight, 'left', rem);
-        }
-        // if both elements are equally tall and taller than minHeight, do nothing
-
-      } else if ( rightHeight > leftHeight ) {
-        // only right is taller than minHeight
-        leftContainer.classList.add('parallax');
-      } else if ( leftHeight > rightHeight) {
-        // only left is taller than minHeight
-        rightContainer.classList.add('parallax');
-      }
+    if ( rightHeight > minHeight && leftHeight < minHeight ) {
+      // right is taller than minHeight and left is not
+      console.log('right');
+      leftContent.classList.add('fixed');
+    } else if ( leftHeight > minHeight && rightHeight < minHeight ) {
+      // left is taller than minHeight and right is not
+      console.log('left');
+      rightContent.classList.add('fixed');
     }
     // if neither element is taller than minHeight, do nothing
-  })
+  });
 
 }
 
 document.addEventListener('DOMContentLoaded', DOMContentLoaded);
-
-function scroll(minHeight, side, rem) {
-
-  // get position
-  var scrollY = document.body.scrollTop || document.documentElement.scrollTop;
-  var height = document.body.scrollHeight;
-  var normalized = scrollY / (height - window.innerHeight);
-
-  // decide which side is parallax
-  var scrollContainer = leftContainer;
-  var scrollContent = leftContent;
-  var otherContainer = rightContainer;
-  if ( side === 'right' ) {
-    scrollContainer = rightContainer;
-    scrollContent = rightContent;
-    otherContainer = leftContainer;
-  }
-
-  // apply parallax
-  var parallaxHeight = scrollContainer.clientHeight;
-  var parallaxContentHeight = scrollContainer.scrollHeight; 
-  var parallaxOffset = (parallaxHeight - minHeight) * normalized + normalized * -1 * rem;
-  scrollContent.style.transform = "translate3D(0,-" + parallaxOffset + "px,0)";
-  
-  requestAnimationFrame(function() {
-    scroll(minHeight, side, rem);
-  });
-  
-}
 
 function outerSize(el,direction) {
   var height = el.offsetHeight;

@@ -42,17 +42,15 @@
         width: calc(25% - 3rem);
     }
     h4 {
+        display: block;
+        width: 100%;
+        overflow-x: hidden;
         margin-top: 0.5rem;
         text-transform: uppercase;
         letter-spacing: 0.1rem;
         // color: $text-color;
         transition: color 0.3s ease-in-out;
-        @include at-least($M) {
-            font-size: 1rem;
-        }
-        @include at-least($L) {
-            font-size: 0.75rem;
-        }
+        font-size: 0.75rem;
     }
     .project-thumbnail {
         height: 7.5rem;

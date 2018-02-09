@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     cleancss = require('gulp-clean-css'),
-    // uglify = require('gulp-uglify'),
+    uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
     rename = require('gulp-rename'),
     notify = require('gulp-notify'),
@@ -40,7 +40,7 @@ gulp.task('form-scripts', function () {
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
         // Add transformation tasks to the pipeline here.
-        // .pipe(uglify())
+        .pipe(uglify())
         .on('error', gutil.log)
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('build/js/'))
@@ -63,7 +63,7 @@ gulp.task('home-scripts', function () {
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
         // Add transformation tasks to the pipeline here.
-        // .pipe(uglify())
+        .pipe(uglify())
         .on('error', gutil.log)
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('build/js/'))
@@ -96,7 +96,9 @@ gulp.task('parallax-scripts', function () {
 
 gulp.task('lightbox-scripts', function () {
   var b = browserify({
-    entries: ['src/scripts/lightbox.js'],
+    entries:[
+      'src/scripts/lightbox.js'
+    ],
     debug: true
   });
 
@@ -111,8 +113,8 @@ gulp.task('lightbox-scripts', function () {
       this.emit('end');
     }))
         // Add transformation tasks to the pipeline here.
-        // .pipe(uglify())
-        // .on('error', gutil.log)
+        .pipe(uglify())
+        .on('error', gutil.log)
         .pipe(sourcemaps.write('./')) // writes .map file
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('build/js/'))
@@ -131,14 +133,14 @@ gulp.task('clean', function() {
 });
 
 gulp.task('default', ['clean'], function() {
-  gulp.start('styles', 'form-scripts', 'parallax-scripts', 'home-scripts', 'lightbox-scripts', 'images');
+  gulp.start('styles', 'form-scripts', 'home-scripts', 'lightbox-scripts', 'parallax-scripts', 'images');
 });
 
 gulp.task('watch', function() {
   // Watch .scss files
   gulp.watch('src/styles/**/*.scss', ['styles']);
   // Watch .js files
-  gulp.watch('src/scripts/**/*.js', ['form-scripts', 'home-scripts', 'parallax-scripts', 'lightbox-scripts']);
+  gulp.watch('src/scripts/**/*.js', ['form-scripts', 'home-scripts', 'lightbox-scripts', 'parallax-scripts']);
   // Watch image files
   gulp.watch('src/images/**/*', ['images']);
   // Create LiveReload server

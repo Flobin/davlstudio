@@ -4,15 +4,12 @@
 
     <article>
 
-        <section class="left-container standard">
-            <div class="left-content">
-                <?php snippet('project_info') ?>
-                <?= $page->richtext()->kirbytext() ?>
-            </div>
+        <section class="left-content">
+            <?php snippet('project_info') ?>
+            <?= $page->richtext()->kirbytext() ?>
         </section>
 
-        <section class="right-container standard">
-            <div class="right-content lightbox">
+        <section class="right-content lightbox">
             <?php
             $images = $page->images();
             foreach($images as $image): ?>
@@ -20,7 +17,6 @@
                     <?= $image->thumb(array('width' => 600)); ?>
                 </a>
             <?php endforeach ?>
-            </div>
         </section>
 
     </article>
