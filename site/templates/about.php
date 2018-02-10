@@ -8,6 +8,9 @@
         </section>
         <section class="right-content">
             <?= $page->partners()->kirbytext() ?>
+            <figure class="models">
+                <img src="/assets/build/img/maquettes.jpg" class="" alt="maquettes" />
+            </figure>
         </section>
     </article>
 
