@@ -13,15 +13,12 @@ endforeach ?>
 <article class="article grid-item home-projects">
     <a href="/projecten"><h2 class="h4">Projecten</h2></a>
     <section class="home-projects-list">
-        <? $projects = page('projecten')->children()->visible()->shuffle()->limit(16);
+        <? $projects = page('projecten')->children()->visible()->filterBy('hasImages', true)->shuffle()->limit(16);
         foreach($projects as $project): ?>
             <a href="/projecten" class="home-project-link">
                 <img src="<?= $project->images()->sortBy('sort', 'asc')->first()->thumb(array('width' => 150, 'crop' => true))->url() ?>" alt="Thumbnail for <?= $project->title()->html() ?>" class="home-project-image" />
             </a>
         <? endforeach; ?>
-        <!-- <a href="/projecten">
-            <img src="/assets/build/img/homepage-projects.png">
-        </a>-->
     </section>
     <nav class="homepage-article-link">
         <a href="/projecten" class="button">meer projecten &rarr;</a>

@@ -1,23 +1,27 @@
     <footer class="site-footer" role="contentinfo">
 
-        <?php if ($page->template() == "project" || $page->template() == "article"):
-            $featured = $pages->find('projecten')->children()->shuffle()->limit(4); ?>
+        <? if ($page->template() == "project" || $page->template() == "article"):
+            $featured = $pages->find('projecten')->children()->filterBy('hasImages', true)->shuffle()->limit(4); ?>
 
             <div class="random-content container">
                 <a href="/projecten"><h3 class="random-content-title">Meer projecten</h3></a>
                 <ul class="collection">
-                  <?php foreach($featured as $project): ?>
+                  <? foreach($featured as $project): ?>
                   <li class="collection-item project">
-                    <a href="<?php echo $project->url() ?>">
-                        <img src="<?= $project->images()->sortBy('sort', 'asc')->first()->thumb(array('width' => 300))->url() ?>" alt="Thumbnail for the project <?= $project->title()->html() ?>" class="project-thumbnail" />
+                    <? if($image = $project->images()->sortBy('sort', 'asc')->first()): ?>
+                    <a href="<?= $project->url() ?>">
+                      <img src="<?= $image->thumb(array('width' => 300))->url() ?>" alt="Thumbnail for the project <?= $project->title()->html() ?>" class="project-thumbnail" />
                     </a>
-                    <h4><?php echo $project->title() ?></h4>
+                    <? else: ?>
+                        <a href="<?= $project->url() ?>"><?= $project->title(); ?></a>
+                    <? endif ?>
+                    <h4><?= $project->title() ?></h4>
                   </li>
-                  <?php endforeach ?>
+                  <? endforeach ?>
                 </ul>
             </div>
 
-        <?php endif ?>
+        <? endif ?>
 
 
         <p class="footer-copyright">DAVL Studio © <?= date("Y"); ?></p>
