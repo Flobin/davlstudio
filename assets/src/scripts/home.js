@@ -8,7 +8,7 @@ var showAll = document.querySelector('.show-all');
 var backgroundColors = ['pink','green','orange','dark-blue'];
 // var siteHeader = document.querySelector('.site-header');
 var projects = document.querySelector('.home-projects');
-var projectsPosition = projects.offsetTop + outerSize(projects, 'height');
+var projectsPosition = 1200;
 
 var msnry = new Masonry( masonryContainer, {
   itemSelector: '.grid-item',
@@ -43,7 +43,9 @@ function DOMContentLoaded() {
   }
 
   // get projects position
-  projectsPosition = projects.offsetTop + outerSize(projects, 'height');
+  if (projects) {
+    projectsPosition = projects.offsetTop + outerSize(projects, 'height');
+  }
   // grab an element
   var homeHeader = document.querySelector(".site-header");
   // construct an instance of Headroom, passing the element

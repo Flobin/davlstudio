@@ -6,7 +6,7 @@
     </div>
 
     <?php $articles = page('home')->children()->visible()->flip();
-    $rest           = $articles->offset(10)->paginate(5);
+    $rest           = $articles->offset(10)->paginate(4);
     $pagination     = $rest->pagination();
 
     if($pagination->isFirstPage()):
