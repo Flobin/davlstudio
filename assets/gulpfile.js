@@ -54,7 +54,7 @@ function writeServiceWorkerFile(rootDir, handleFetch, callback) {
       }
     }],
     staticFileGlobs: [
-      rootDir + '{content,thumbs,assets/build,kirby,site,vendor}/**/*.{js,html,php,css,png,jpg,,jpeg,gif,xml,txt}',
+      rootDir + '{content,thumbs,assets/build,kirby,site,vendor}/**/*.{js,html,css,png,jpg,,jpeg,gif,xml}',
       rootDir + 'index.html',
       rootDir + 'index.php',
       rootDir + 'https://use.typekit.net/oms7gsw.css'
