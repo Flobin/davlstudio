@@ -1,5 +1,6 @@
 {
-    "name": "DAVL Studio",
+    "name": "DAVL Studio | Architectuur, strategie, ontwikkeling",
+    "short_name": "DAVL Studio",
     "icons": [
         {
             "src": "/assets/favicons/android-chrome-192x192.png",
@@ -14,5 +15,7 @@
     ],
     "theme_color": "#4d4d4d",
     "background_color": "#4d4d4d",
-    "display": "standalone"
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/"
 }

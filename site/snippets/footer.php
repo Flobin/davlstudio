@@ -52,5 +52,6 @@
     <? if ($page->template() != "home" && $page->template() != "projects"): ?>
         <script src="/assets/build/js/parallax.js"></script>
     <? endif ?>
+    <script src="/assets/build/js/sw.js"></script>
 </body>
 </html>
