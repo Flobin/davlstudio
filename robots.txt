@@ -1,2 +1,6 @@
 User-agent: *
-Disallow: /
+Disallow: /kirby/
+Disallow: /site/
+Disallow: /panel/
+Sitemap: https://davlstudio.com/sitemap
+
