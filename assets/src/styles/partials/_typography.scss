@@ -36,6 +36,7 @@ p, .content {
     text-rendering: optimizeLegibility;
 }
 .content {
+    hyphens: auto;
     p+p {
         margin-top: 1rem;
     }
