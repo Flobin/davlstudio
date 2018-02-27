@@ -5,7 +5,7 @@
         <time class="homepage-article-date"><?= $article->date('d/m/Y') ?></time>
 
         <? if($article->hasImages()): 
-            $images = $article->images(); 
+            $images = $article->images()->sortBy('sort', 'asc'); 
             $firstimage = $images->sortBy('sort', 'asc')->first(); ?>
             <a href="<?= $firstimage->url(); ?>" data-caption="<?= $firstimage->alt()->html(); ?>" class="article-image-link first">
                 <figure class="homepage-article-image" itemprop="image">

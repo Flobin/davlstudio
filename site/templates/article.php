@@ -20,7 +20,7 @@
         
         <section class="right-content lightbox">
             <? if($page->hasImages()): 
-                foreach ($page->images() as $image): ?>
+                foreach ($page->images()->sortBy('sort', 'asc') as $image): ?>
                 <a href="<?= $image->url(); ?>" data-caption="<?= $image->alt()->html(); ?>" class="article-image-link">
                     <figure class="article-image">
                         <?= $image->thumb(array('width' => 600)); ?>
