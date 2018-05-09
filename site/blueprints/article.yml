@@ -42,10 +42,21 @@ fields:
     label: Beschrijving
     type: text
     placeholder: type hier een korte beschrijving van het artikel (optioneel)
-    width: 1
+    width: 1/2
     validate: 
       maxLength: 150
+
+  showImage:
+    label: afbeelding weergeven?
+    type: radio
+    options:
+      ja: ja
+      nee: nee
+    default: ja
+    width: 1/2
 
   richtext:
     label: Tekst
     type:  wysiwyg
+
+

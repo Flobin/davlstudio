@@ -19,30 +19,32 @@
         </section>
         
         <section class="right-content lightbox">
-            <? if($page->hasImages()): 
-                foreach ($page->images()->sortBy('sort', 'asc') as $image): ?>
-                <a href="<?= $image->url(); ?>" data-caption="<?= $image->alt()->html(); ?>" class="article-image-link">
-                    <figure class="article-image">
-                        <?= $image->thumb(array('width' => 600)); ?>
-                    </figure>
-                </a>
-                <?php endforeach; ?>
-            <? elseif($page->image()): 
-                $image = $page->image(); ?>
-                <a href="<?= $image->url(); ?>" data-caption="<?= $image->alt()->html(); ?>" class="article-image-link">
-                    <figure class="article-image">
-                        <?= $image->thumb(array('width' => 600)); ?>
-                    </figure>
-                </a>
-            <? elseif($page->project() != ''):
-                $projectname = $page->project();
-                $image = page('projecten/' . $projectname)->images()->sortBy('sort', 'asc')->first(); 
-                if($image):?>
-                <a href="<?= $image->url(); ?>" data-caption="<?= $image->alt()->html(); ?>" class="article-image-link">
-                    <figure class="article-image">
-                        <?= $image->thumb(array('width' => 600)); ?>
-                    </figure>
-                </a>
+            <? if($page->showImage() != 'nee'): ?>
+                <? if($page->hasImages()): 
+                    foreach ($page->images()->sortBy('sort', 'asc') as $image): ?>
+                    <a href="<?= $image->url(); ?>" data-caption="<?= $image->alt()->html(); ?>" class="article-image-link">
+                        <figure class="article-image">
+                            <?= $image->thumb(array('width' => 600)); ?>
+                        </figure>
+                    </a>
+                    <?php endforeach; ?>
+                <? elseif($page->image()): 
+                    $image = $page->image(); ?>
+                    <a href="<?= $image->url(); ?>" data-caption="<?= $image->alt()->html(); ?>" class="article-image-link">
+                        <figure class="article-image">
+                            <?= $image->thumb(array('width' => 600)); ?>
+                        </figure>
+                    </a>
+                <? elseif($page->project() != ''):
+                    $projectname = $page->project();
+                    $image = page('projecten/' . $projectname)->images()->sortBy('sort', 'asc')->first(); 
+                    if($image):?>
+                    <a href="<?= $image->url(); ?>" data-caption="<?= $image->alt()->html(); ?>" class="article-image-link">
+                        <figure class="article-image">
+                            <?= $image->thumb(array('width' => 600)); ?>
+                        </figure>
+                    </a>
+                    <? endif; ?>
                 <? endif; ?>
             <? endif; ?>
         </section>
