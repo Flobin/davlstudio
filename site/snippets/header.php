@@ -4,7 +4,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta http-equiv="Content-Security-Policy" content="default-src https:">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src https:"> -->
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
     <title>DAVL Studio | Architectuur, Strategie, Ontwikkeling <? if ($page->isHomePage()) { } else { echo '| ' . $page->title()->html(); } ?></title>
