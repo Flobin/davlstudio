@@ -1,5 +1,30 @@
     <footer class="site-footer" role="contentinfo">
 
+        <? if ($page->template() == "project"): ?>
+
+        <div class="related-posts container">
+            <h3 class="related-posts-title">Gerelateerd nieuws</h3>
+            <ul class="collection">
+            <?php
+            $pageProject = $page->slug();
+            $posts = page('home')->children()->visible()->filterBy('project', $pageProject)->flip()->limit(4);
+            foreach($posts as $post): ?>
+                <li class="collection-item related-post">
+                    <a href="<?= $post->url() ?>">
+                        <?php if ($post->hasImages()): 
+                            $image = $post->images()->sortBy('sort', 'asc')->first(); ?>
+                            <img src="<?= $image->thumb(array('width' => 300))->url() ?>" class="project-thumbnail" />
+                        <?php else:
+                            $image = $page->images()->sortBy('sort', 'asc')->first(); ?>
+                            <img src="<?= $image->thumb(array('width' => 300))->url() ?>" class="project-thumbnail" />
+                        <?php endif ?>
+                        <h4 class="related-post-title"><?= $post->title()->html() ?></h4>
+                    </a>
+                </li>
+            <?php endforeach ?>
+            </ul>
+        </div>
+        <? endif ?>
         <? if ($page->template() == "project" || $page->template() == "article"):
             $featured = $pages->find('projecten')->children()->filterBy('hasImages', true)->shuffle()->limit(4); ?>
 

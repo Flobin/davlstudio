@@ -11,3 +11,38 @@
         margin-bottom: 0;
     }
 }
+
+.random-content-title, .related-posts-title {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: $grey;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    @include at-least($M) {
+        font-size: 1.25rem;
+    }
+    @include at-least($L) {
+        font-size: 1rem;
+    }
+}
+.random-content .project, .related-post {
+    text-align: center;
+    width: calc(50% - 2rem);
+    @include at-least($M) {
+        width: calc(25% - 3rem);
+    }
+    h4 {
+        display: block;
+        width: 100%;
+        overflow-x: hidden;
+        margin-top: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        // color: $text-color;
+        transition: color 0.3s ease-in-out;
+        font-size: 0.75rem;
+    }
+    .project-thumbnail {
+        height: 7.5rem;
+    }
+}

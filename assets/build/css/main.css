@@ -1258,6 +1258,38 @@ main {
   .collection-item:last-child, .field:last-child {
     margin-bottom: 0; }
 
+.random-content-title, .related-posts-title {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: gray;
+  margin-bottom: 2rem;
+  margin-top: 2rem; }
+  @media screen and (min-width: 1024px) {
+    .random-content-title, .related-posts-title {
+      font-size: 1.25rem; } }
+  @media screen and (min-width: 1440px) {
+    .random-content-title, .related-posts-title {
+      font-size: 1rem; } }
+
+.random-content .project, .related-post {
+  text-align: center;
+  width: calc(50% - 2rem); }
+  @media screen and (min-width: 1024px) {
+    .random-content .project, .related-post {
+      width: calc(25% - 3rem); } }
+  .random-content .project h4, .related-post h4 {
+    display: block;
+    width: 100%;
+    overflow-x: hidden;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    -webkit-transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+    font-size: 0.75rem; }
+  .random-content .project .project-thumbnail, .related-post .project-thumbnail {
+    height: 7.5rem; }
+
 .site-header {
   position: fixed;
   top: 0;
@@ -1527,40 +1559,18 @@ main {
   .social-icon:hover {
     cursor: pointer; }
 
-.random-content {
-  border-top: 1px solid #b3b3b3; }
+.random-content, .related-posts {
+  border-top: 1px solid #b3b3b3;
+  margin-top: 2rem; }
 
-.random-content-title {
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  color: gray;
-  margin-bottom: 1rem;
-  margin-top: 1rem; }
-  @media screen and (min-width: 1024px) {
-    .random-content-title {
-      font-size: 1.25rem; } }
-  @media screen and (min-width: 1440px) {
-    .random-content-title {
-      font-size: 1rem; } }
-
-.random-content .project {
-  text-align: center;
-  width: calc(50% - 2rem); }
-  @media screen and (min-width: 1024px) {
-    .random-content .project {
-      width: calc(25% - 3rem); } }
-  .random-content .project h4 {
-    display: block;
-    width: 100%;
-    overflow-x: hidden;
-    margin-top: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    -webkit-transition: color 0.3s ease-in-out;
-    transition: color 0.3s ease-in-out;
-    font-size: 0.75rem; }
-  .random-content .project .project-thumbnail {
-    height: 7.5rem; }
+.related-posts .collection, .related-posts .form {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
+  .related-posts .collection .related-post, .related-posts .form .related-post {
+    margin-right: 4rem; }
+    .related-posts .collection .related-post:nth-child(4), .related-posts .form .related-post:nth-child(4) {
+      margin-right: 0; }
 
 nav.pagination {
   width: 100%; }
