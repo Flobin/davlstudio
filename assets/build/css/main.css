@@ -1818,30 +1818,24 @@ nav.pagination {
 .home .content {
   margin-top: 3rem; }
 
+.grid {
+  display: grid;
+  grid-gap: 3rem;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 5px; }
+  @media screen and (min-width: 1024px) {
+    .grid {
+      grid-template-columns: 1fr 1fr; } }
+
 .grid-item {
-  margin-bottom: 3rem;
-  width: 90%;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out; }
-  @media screen and (min-width: 1024px) {
-    .grid-item {
-      width: calc(50% - 2rem); } }
 
 .grid-item.visible, .no-js .grid-item {
   opacity: 1;
   visibility: visible; }
-
-@media screen and (min-width: 1024px) {
-  .grid-sizer {
-    width: calc(50% - 2rem); } }
-
-.gutter-sizer {
-  width: 3.99rem; }
-  @media screen and (min-width: 1024px) {
-    .gutter-sizer {
-      width: 3.99rem; } }
 
 .homepage-article {
   color: gray;
@@ -2008,7 +2002,7 @@ nav.pagination {
   text-align: justify;
   font-style: italic; }
 
-.homepage-article.social {
+.homepage-article.social .homepage-article-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2020,26 +2014,30 @@ nav.pagination {
       flex-wrap: nowrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
   padding: 2rem 0; }
-  .homepage-article.social .social-icon {
+  .homepage-article.social .homepage-article-content .social-icon {
     height: 4rem;
     width: 4rem;
     text-shadow: none;
     background: none; }
-    .homepage-article.social .social-icon svg {
+    .homepage-article.social .homepage-article-content .social-icon svg {
       fill: #fff;
       -webkit-transition: fill 0.3s ease-in-out;
       transition: fill 0.3s ease-in-out; }
-    .homepage-article.social .social-icon:hover {
+    .homepage-article.social .homepage-article-content .social-icon:hover {
       text-shadow: none;
       background: none; }
-  .homepage-article.social:hover a svg {
+  .homepage-article.social .homepage-article-content:hover a svg {
     fill: #e6e6e6; }
-  .homepage-article.social .facebook svg:hover {
+  .homepage-article.social .homepage-article-content .facebook svg:hover {
     fill: #365396; }
-  .homepage-article.social .instagram svg:hover {
+  .homepage-article.social .homepage-article-content .instagram svg:hover {
     fill: #c229a1; }
-  .homepage-article.social .linkedin svg:hover {
+  .homepage-article.social .homepage-article-content .linkedin svg:hover {
     fill: #006eb3; }
 
 .home-projects-list {

@@ -19,13 +19,16 @@
     @extend .container;
     margin-top: 3rem;
 }
-
-.grid-item {
-    margin-bottom: 3rem;
-    width: 90%;
+.grid {
+    display: grid;
+    grid-gap: 3rem;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 5px;
     @include at-least($M) {
-        width: calc(50% - 2rem);
+        grid-template-columns: 1fr 1fr;
     }
+}
+.grid-item {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out;
@@ -33,17 +36,6 @@
 .grid-item.visible, .no-js .grid-item {
     opacity: 1;
     visibility: visible;
-}
-.grid-sizer {
-    @include at-least($M) {
-        width: calc(50% - 2rem);
-    }
-}
-.gutter-sizer {
-    width: 3.99rem;
-    @include at-least($M) {
-        width: 3.99rem;
-    }
 }
 
 .homepage-article {
@@ -128,39 +120,42 @@
     }
 }
 .homepage-article.social {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    padding: 2rem 0;
-    .social-icon {
-        height: 4rem;
-        width: 4rem;
-        text-shadow: none;
-        background: none;
-        svg {
-            fill: #fff;
-            transition: fill 0.3s ease-in-out;
-        }
-        &:hover {
+    @extend %homepage-dark-bg;
+    .homepage-article-content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+        padding: 2rem 0;
+        .social-icon {
+            height: 4rem;
+            width: 4rem;
             text-shadow: none;
             background: none;
+            svg {
+                fill: #fff;
+                transition: fill 0.3s ease-in-out;
+            }
+            &:hover {
+                text-shadow: none;
+                background: none;
+            }
+        }
+        &:hover a svg {
+            fill: $lightest-grey;
+        }
+        .facebook svg:hover {
+            fill: $fb-blue;
+        }
+        .instagram svg:hover {
+            fill: $insta-magenta;
+        }
+        .linkedin svg:hover {
+            fill: $li-blue;
         }
     }
-    &:hover a svg {
-        fill: $lightest-grey;
-    }
-    .facebook svg:hover {
-        fill: $fb-blue;
-    }
-    .instagram svg:hover {
-        fill: $insta-magenta;
-    }
-    .linkedin svg:hover {
-        fill: $li-blue;
-    }
-    @extend %homepage-dark-bg;
-    // background-color: $pink;
 }
 
 
@@ -168,10 +163,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    // @extend %homepage-dark-bg;
-    // padding: 2rem;
     margin: 1rem 0;
-    // background-color: $dark-blue;
 }
 #body .home-projects-list a,
 #body .home-projects-list a:hover,
@@ -186,24 +178,11 @@
     &:nth-child(n+12) {
         margin-bottom: 0;
     }
-    // width: 12.5vw;
-    // display: block;
-    // margin-bottom: 2rem;
-    // &:nth-child(n+2) {
-    //     margin-bottom: 0;
-    // }
 }
 .home-project-image {
     display: block;
-    // transition: filter 0.3s ease-in-out;
-    // filter: saturate(30%) opacity(90%);
-    // width: 12.5vw;
-    // height: 12.5vw;
-    // object-fit: cover;
-    // &:hover {
-    //     filter: none;
-    // }
 }
+
 .home-contact {
     .h4 {
         margin-bottom: 1rem;
@@ -215,7 +194,6 @@
         position: relative;
     }
     .home-contact-address {
-        // display: inline-block
     }
     .home-contact-map {
         background: none;
@@ -224,7 +202,6 @@
         position: absolute;
         right: 2rem;
         bottom: 2rem;
-        // display: inline-block;
     }
     #home-contact-map-img {
         display: block;
@@ -232,17 +209,7 @@
         width: auto;
         object-fit: cover;
     }
-    // a {
-    //     @include link-underline($dark-grey, $lighter-grey, $selection-color);
-    // }
-    // &:hover {
-    //     a {
-    //         @include link-underline($darker-grey, $lightest-grey, $selection-color);
-    //         &:hover {
-    //             @include link-underline($darker-grey, $link-hover-color, $selection-color);
-    //         }
-    //     }
-    // }
+
 }
 .home-projects, .home-contact, .instagram, .about {
     .h4 {

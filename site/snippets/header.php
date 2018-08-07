@@ -7,7 +7,7 @@
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src https:"> -->
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>DAVL Studio | Architectuur, Strategie, Ontwikkeling <? if ($page->isHomePage()) { } else { echo '| ' . $page->title()->html(); } ?></title>
+    <title>DAVL Studio | Architectuur, Strategie, Ontwikkeling <?php if ($page->isHomePage()) { } else { echo '| ' . $page->title()->html(); } ?></title>
     <meta name="description" content="<?= $site->description()->html() ?>">
 
     <link rel="stylesheet" href="https://use.typekit.net/oms7gsw.css">
@@ -24,7 +24,7 @@
     <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
     <meta name="theme-color" content="#4d4d4d">
 
-    <? $pageDescription = 'DAVL Studio | Architectuur, Strategie, Ontwikkeling';
+    <?php $pageDescription = 'DAVL Studio | Architectuur, Strategie, Ontwikkeling';
     $pageImageUrl = '//davlstudio.com/assets/build/img/kiosk_instagram.jpg';
     if ($page->description()) {
         $pageDescription = $page->description();
@@ -60,7 +60,7 @@
                 <img src="/assets/build/img/logo.svg" id="logo" alt="Click this DAVL Studio logo to go to the home page" role="img">
             </a>
 
-            <? if ($page->template() != "home"): ?><h1 class="page-title"><?= $page->title()->html() ?></h1><? endif; ?>
+            <?php if ($page->template() != "home"): ?><h1 class="page-title"><?= $page->title()->html() ?></h1><?php endif; ?>
 
             <div class="menu-container">
                 <input id="menu-toggle" type="checkbox" name="menu-toggle">
@@ -81,7 +81,7 @@
         </div>
 
     </header>
-    <? if ($page->template() == "home"): ?>
+    <?php if ($page->template() == "home"): ?>
     <header class="home-header" role="banner">
 
         <a class="home-header-link" href="/">
@@ -89,4 +89,4 @@
         </a>
 
     </header>
-    <? endif ?>
+    <?php endif ?>

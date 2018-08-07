@@ -1,6 +1,6 @@
     <footer class="site-footer" role="contentinfo">
 
-        <? if ($page->template() == "project"): ?>
+        <?php if ($page->template() == "project"): ?>
 
         <div class="related-posts container">
             <h3 class="related-posts-title">Gerelateerd nieuws</h3>
@@ -24,29 +24,29 @@
             <?php endforeach ?>
             </ul>
         </div>
-        <? endif ?>
-        <? if ($page->template() == "project" || $page->template() == "article"):
+        <?php endif ?>
+        <?php if ($page->template() == "project" || $page->template() == "article"):
             $featured = $pages->find('projecten')->children()->filterBy('hasImages', true)->shuffle()->limit(4); ?>
 
             <div class="random-content container">
                 <a href="/projecten"><h3 class="random-content-title">Meer projecten</h3></a>
                 <ul class="collection">
-                  <? foreach($featured as $project): ?>
+                  <?php foreach($featured as $project): ?>
                   <li class="collection-item project">
-                    <? if($image = $project->images()->sortBy('sort', 'asc')->first()): ?>
+                    <?php if($image = $project->images()->sortBy('sort', 'asc')->first()): ?>
                     <a href="<?= $project->url() ?>">
                       <img src="<?= $image->thumb(array('width' => 300))->url() ?>" alt="Thumbnail for the project <?= $project->title()->html() ?>" class="project-thumbnail" />
                     </a>
-                    <? else: ?>
+                    <?php else: ?>
                         <a href="<?= $project->url() ?>"><?= $project->title(); ?></a>
-                    <? endif ?>
+                    <?php endif ?>
                     <h4><?= $project->title() ?></h4>
                   </li>
-                  <? endforeach ?>
+                  <?php endforeach ?>
                 </ul>
             </div>
 
-        <? endif ?>
+        <?php endif ?>
 
 
         <p class="footer-copyright">DAVL Studio © <?= date("Y"); ?></p>
@@ -65,18 +65,18 @@
 
     </footer>
 
-    <? if ($page->isHomePage() || $page->template() == "nieuws"): ?>
+    <?php if ($page->isHomePage() || $page->template() == "nieuws"): ?>
         <script src="/assets/build/js/home.js"></script>
-    <? endif; ?>
-    <? if ($page->template() == "contact" || $page->template() == "search"): ?>
+    <?php endif; ?>
+    <?php if ($page->template() == "contact" || $page->template() == "search"): ?>
         <script src="/assets/build/js/form.js"></script>
-    <? endif; ?>
-    <? if ($page->template() == "project" || $page->template() == "article" || $page->isHomePage() || $page->template() == "nieuws"): ?>
+    <?php endif; ?>
+    <?php if ($page->template() == "project" || $page->template() == "article" || $page->isHomePage() || $page->template() == "nieuws"): ?>
         <script src="/assets/build/js/lightbox.js"></script>
-    <? endif; ?>
-    <? if ($page->template() != "home" && $page->template() != "projects"): ?>
+    <?php endif; ?>
+    <?php if ($page->template() != "home" && $page->template() != "projects"): ?>
         <script src="/assets/build/js/parallax.js"></script>
-    <? endif ?>
+    <?php endif ?>
     <script src="/assets/src/scripts/sw.js"></script>
 </body>
 </html>
