@@ -6,10 +6,10 @@
         <?php foreach($projects as $project): ?>
             <li class="collection-item project">
                 <a href="<?= $project->url() ?>">
-                    <? $image = $project->image();
+                    <?php $image = $project->image();
                     if($image): ?>
                     <img src="<?= $project->images()->sortBy('sort', 'asc')->first()->thumb(array('width' => 600))->url() ?>" alt="Thumbnail for the project <?= $project->title()->html() ?>" class="project-thumbnail" />
-                    <? endif; ?>
+                    <?php endif; ?>
                     <h2 class="project-title"><?= $project->title() ?></h2>
                 </a>
             </li>

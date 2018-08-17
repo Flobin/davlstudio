@@ -11,16 +11,16 @@
 
             <?= $page->richtext()->kirbytext(); ?>
 
-            <? if($page->project() != ''): ?>
+            <?php if($page->project() != ''): ?>
             <nav class="article-link">
                 <a class="button" href="/projecten/<?= $page->project(); ?>">meer <?= $page->project(); ?> &rarr;</a>
             </nav>
-            <? endif; ?>
+            <?php endif; ?>
         </section>
         
         <section class="right-content lightbox">
-            <? if($page->showImage() != 'nee'): ?>
-                <? if($page->hasImages()): 
+            <?php if($page->showImage() != 'nee'): ?>
+                <?php if($page->hasImages()): 
                     foreach ($page->images()->sortBy('sort', 'asc') as $image): ?>
                     <a href="<?= $image->url(); ?>" data-caption="<?= $image->alt()->html(); ?>" class="article-image-link">
                         <figure class="article-image">
@@ -28,14 +28,14 @@
                         </figure>
                     </a>
                     <?php endforeach; ?>
-                <? elseif($page->image()): 
+                <?php elseif($page->image()): 
                     $image = $page->image(); ?>
                     <a href="<?= $image->url(); ?>" data-caption="<?= $image->alt()->html(); ?>" class="article-image-link">
                         <figure class="article-image">
                             <?= $image->thumb(array('width' => 600)); ?>
                         </figure>
                     </a>
-                <? elseif($page->project() != ''):
+                <?php elseif($page->project() != ''):
                     $projectname = $page->project();
                     $image = page('projecten/' . $projectname)->images()->sortBy('sort', 'asc')->first(); 
                     if($image):?>
@@ -44,9 +44,9 @@
                             <?= $image->thumb(array('width' => 600)); ?>
                         </figure>
                     </a>
-                    <? endif; ?>
-                <? endif; ?>
-            <? endif; ?>
+                    <?php endif; ?>
+                <?php endif; ?>
+            <?php endif; ?>
         </section>
         
     </article>

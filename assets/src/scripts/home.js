@@ -9,15 +9,15 @@ var projects = document.querySelector('.home-projects');
 var projectsPosition = 1200;
 
 // load more with AJAX
-var articlesContainer = document.querySelector('.content');
-var limit = parseInt(articlesContainer.dataset.limit);
-var page = articlesContainer.dataset.page + '/.json'
-var offset = limit;
-var loadMoreButton = document.querySelector('.load-more');
-var loadMoreData = {
-  'limit': limit,
-  'offset': offset
-}
+// var articlesContainer = document.querySelector('.content');
+// var limit = parseInt(articlesContainer.dataset.limit);
+// var page = articlesContainer.dataset.page + '/.json'
+// var offset = limit;
+// var loadMoreButton = document.querySelector('.load-more');
+// var loadMoreData = {
+//   'limit': limit,
+//   'offset': offset
+// }
 
 // resizes grid items so they fit content height
 function resizeGridItem(item){
@@ -36,6 +36,11 @@ function resizeAllGridItems(){
   forEach(allItems, function(index, element){
     resizeGridItem(element);
   });
+}
+
+function animate() {
+  resizeAllGridItems();
+  requestAnimationFrame(animate);
 }
 
 
@@ -61,6 +66,9 @@ function DOMContentLoaded() {
   //once images loaded, resize again just to make sure
   imagesLoaded(articlesContainer, resizeAllGridItems);
 
+  //keep resizing
+  requestAnimationFrame(animate);
+
   // get projects position
   if (projects) {
     projectsPosition = projects.offsetTop + outerSize(projects, 'height');
@@ -80,35 +88,35 @@ function DOMContentLoaded() {
   headroom.init();
 
   // load more with AJAX
-  loadMoreButton.addEventListener('click', function() {
-    var xhr = new XMLHttpRequest();
-    var params = 'limit=' + limit + '&offset=' + offset;
-    var getURL = page + '?' + params;
-    console.log('getURL: ' + getURL);
-    xhr.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        var jsonResponse = xhr.responseText;
-        var data = JSON.parse(jsonResponse);
-        if(data.more == false) {
-          // hide button
-          console.log('no more');
-        }
-        // append new articles
-        console.log(data.html);
-        articlesContainer.insertAdjacentHTML('beforeend', data.html);
-        forEach(document.querySelectorAll('.grid-item'), function(index, element) {
-          element.classList.add('visible');
-          resizeGridItem(element);
-        });
-        // increase offset
-        console.log('the rest');
-        offset += limit;
-        resizeAllGridItems;
-      }
-    };
-    xhr.open('GET', getURL);
-    xhr.send();
-  }, false);
+  // loadMoreButton.addEventListener('click', function() {
+  //   var xhr = new XMLHttpRequest();
+  //   var params = 'limit=' + limit + '&offset=' + offset;
+  //   var getURL = page + '?' + params;
+  //   console.log('getURL: ' + getURL);
+  //   xhr.onreadystatechange = function() {
+  //     if (this.readyState == 4 && this.status == 200) {
+  //       var jsonResponse = xhr.responseText;
+  //       var data = JSON.parse(jsonResponse);
+  //       if(data.more == false) {
+  //         // hide button
+  //         console.log('no more');
+  //       }
+  //       // append new articles
+  //       console.log(data.html);
+  //       articlesContainer.insertAdjacentHTML('beforeend', data.html);
+  //       forEach(document.querySelectorAll('.grid-item'), function(index, element) {
+  //         element.classList.add('visible');
+  //         resizeGridItem(element);
+  //       });
+  //       // increase offset
+  //       console.log('the rest');
+  //       offset += limit;
+  //       resizeAllGridItems;
+  //     }
+  //   };
+  //   xhr.open('GET', getURL);
+  //   xhr.send();
+  // }, false);
 
 }
 
