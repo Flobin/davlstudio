@@ -9,7 +9,7 @@ var projects = document.querySelector('.home-projects');
 var projectsPosition = 1200;
 
 // load more with AJAX
-// var articlesContainer = document.querySelector('.content');
+var articlesContainer = document.querySelector('.content');
 // var limit = parseInt(articlesContainer.dataset.limit);
 // var page = articlesContainer.dataset.page + '/.json'
 // var offset = limit;
@@ -21,7 +21,7 @@ var projectsPosition = 1200;
 
 // resizes grid items so they fit content height
 function resizeGridItem(item){
-  console.log('resizeGridItem');
+  // console.log('resizeGridItem');
   var grid = document.querySelector('.grid');
   var rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
   var rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
@@ -31,17 +31,17 @@ function resizeGridItem(item){
 }
 
 function resizeAllGridItems(){
-  console.log('resizeAllGridItems');
+  // console.log('resizeAllGridItems');
   var allItems = document.querySelectorAll('.grid-item');
   forEach(allItems, function(index, element){
     resizeGridItem(element);
   });
 }
 
-function animate() {
-  resizeAllGridItems();
-  requestAnimationFrame(animate);
-}
+// function animate() {
+//   resizeAllGridItems();
+//   requestAnimationFrame(animate);
+// }
 
 
 function DOMContentLoaded() {
@@ -67,7 +67,7 @@ function DOMContentLoaded() {
   imagesLoaded(articlesContainer, resizeAllGridItems);
 
   //keep resizing
-  requestAnimationFrame(animate);
+  // requestAnimationFrame(animate);
 
   // get projects position
   if (projects) {
