@@ -49,7 +49,7 @@
         <?php endif ?>
 
 
-        <p class="footer-copyright">DAVL Studio © <?= date("Y"); ?></p>
+        <p class="footer-copyright">DAVL Studio © <?= date("Y"); ?> | <a href="<?= url('privacybeleid') ?>">privacy</a></p>
 
         <p class="footer-social">
             <a href="https://www.facebook.com/DAVLstudio/" class="facebook social-icon">

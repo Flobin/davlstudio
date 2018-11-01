@@ -1,17 +1,17 @@
-<? if($pagination->hasPages()): ?>
-  <nav class="pagination grid-item">
+<?php if($pagination->hasPages()): ?>
+  <nav class="pagination">
 
-    <? if($pagination->hasPrevPage()): ?>
+    <?php if($pagination->hasPrevPage()): ?>
       <a class="pagination-item newer" href="<?= $pagination->prevPageURL() ?>" rel="prev" title="nieuwere berichten">
          &larr; nieuwere berichten
       </a>
-    <? endif ?>
+    <?php endif ?>
 
-    <? if($pagination->hasNextPage()): ?>
+    <?php if($pagination->hasNextPage()): ?>
       <a class="pagination-item older" href="<?= $pagination->nextPageURL() ?>" rel="next" title="oudere berichten">
         oudere berichten &rarr;
       </a>
-    <? endif ?>
+    <?php endif ?>
 
   </nav>
-<? endif ?>
+<?php endif ?>
