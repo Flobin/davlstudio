@@ -2,26 +2,26 @@ function DOMContentLoaded() {
 
   if (form) {
     formInputs();
-    if (form.id == 'contactform') {
-      // console.log('contactform');
-      document.querySelector('.form .submit').addEventListener('click', function(event) {
-        event.preventDefault();
-        var message = serialize(form);
-        // console.log('message: ' + message);
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '//formspree.io/cd1c5968@opayq.com', true);
-        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        // xhr.setRequestHeader("Content-length", message.length);
-        // xhr.onreadystatechange = function() {//Call a function when the state changes.
-        //   if(xhr.readyState == 4 && xhr.status == 200) {
-        //     console.log(xhr.responseText);
-        //   }
-        // }
-        xhr.send(message);
-        alert('Bedankt voor uw bericht, we nemen zo snel mogelijk contact met up op.');
-        window.location.reload(true);
-      })
-    }
+    // if (form.id == 'contactform') {
+    //   // console.log('contactform');
+    //   document.querySelector('.form .submit').addEventListener('click', function(event) {
+    //     event.preventDefault();
+    //     var message = serialize(form);
+    //     // console.log('message: ' + message);
+    //     var xhr = new XMLHttpRequest();
+    //     xhr.open('POST', '//formspree.io/cd1c5968@opayq.com', true);
+    //     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    //     // xhr.setRequestHeader("Content-length", message.length);
+    //     // xhr.onreadystatechange = function() {//Call a function when the state changes.
+    //     //   if(xhr.readyState == 4 && xhr.status == 200) {
+    //     //     console.log(xhr.responseText);
+    //     //   }
+    //     // }
+    //     xhr.send(message);
+    //     alert('Bedankt voor uw bericht, we nemen zo snel mogelijk contact met up op.');
+    //     window.location.reload(true);
+    //   })
+    // }
     
   }
 

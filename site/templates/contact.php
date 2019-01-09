@@ -17,7 +17,7 @@
             <p>
                 Heeft u een vraag voor ons? Laat het weten door middel van het formulier.
             </p>
-            <form class="form" id="contactform" action="//formspree.io/cd1c5968@opayq.com" method="POST">
+            <form class="form" id="contactform" action="https://www.briskforms.com/go/5b9019ee15db29b804864e7b123d20ac" method="POST">
                 <div class="field">
                     <input class="input" type="text" name="naam" placeholder="Naam" required>
                     <label class="label" for="naam"><span class="label-content">Uw naam</span></label>
@@ -30,8 +30,6 @@
                     <textarea class="input" name="bericht" rows="1" placeholder="Bericht" required></textarea>
                     <label class="label" for="bericht"><span class="label-content">Uw bericht</span></label>
                 </div>
-                <input class="hidden" type="text" name="_gotcha" style="display:none">
-                <input class="hidden" type="hidden" name="_subject" value="Bericht via de nieuwe DAVL website">
                 <div class="field">
                     <input class="button submit" type="submit" value="Stuur &rarr;">
                 </div>
