@@ -8,6 +8,8 @@
 }
 .article-date {
     text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: block;
     @include at-least($M) {
         top: 0.25rem;
         font-size: 0.75rem;
@@ -17,9 +19,7 @@
         letter-spacing: 0.5em;
     }
 }
-.article-header {
-    margin-bottom: 1rem;
-}
+
 .article .left {
     a {
         @include link-underline($background-color, $text-color, $selection-color);

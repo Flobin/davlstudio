@@ -1,5 +1,12 @@
 title: Pagina
 
+files:
+  sortable: true
+  fields:
+    alt:
+      label: Alt
+      type:  text
+
 fields:
   title:
     label: Titel
@@ -13,6 +20,15 @@ fields:
     label: Beschrijving
     type: Text
     placeholder: Een korte beschrijving van de pagina (optioneel)
-    width: 1
+    width: 1/2
     validate: 
       maxLength: 150
+
+  showImage:
+    label: afbeelding(en) weergeven?
+    type: radio
+    options:
+      ja: ja
+      nee: nee
+    default: ja
+    width: 1/2

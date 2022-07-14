@@ -1,6 +1,13 @@
 title: Site
 
-pages: default
+pages: 
+  template:
+    - default
+    - magazine
+    - contact
+    - about
+    - error
+    - search
 
 fields:
   title:

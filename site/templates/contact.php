@@ -17,7 +17,7 @@
             <p>
                 Heeft u een vraag voor ons? Laat het weten door middel van het formulier.
             </p>
-            <form class="form" id="contactform" action="https://www.briskforms.com/go/5b9019ee15db29b804864e7b123d20ac" method="POST">
+            <form class="form" id="contactform" action="https://forms.un-static.com/forms/beb0556727d05bca72f6eab6d962b6512f494b61" method="POST">
                 <div class="field">
                     <input class="input" type="text" name="naam" placeholder="Naam" required>
                     <label class="label" for="naam"><span class="label-content">Uw naam</span></label>

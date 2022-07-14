@@ -31,7 +31,7 @@ of the system, please check out http://getkirby.com/docs/advanced/options
 
 c::set('debug',true);
 c::set('thumbs.quality', 67);
-c::set('dev', false);
+c::set('dev', true);
 
 // omit /nieuws in blog posts
 // c::set('routes', array(

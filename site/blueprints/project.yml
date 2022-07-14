@@ -68,13 +68,18 @@ fields:
       on hold: on hold
       studie: studie
     default: false
-    width: 1/2
+    width: 1/3
+
+  tags:
+    label: Tags
+    type: tags
+    width: 1/3
 
   description:
     label: Beschrijving
     type: text
     placeholder: Een korte beschrijving van het project (optioneel)
-    width: 1/2
+    width: 1/3
     validate: 
       maxLength: 150
 

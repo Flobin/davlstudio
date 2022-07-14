@@ -2,28 +2,31 @@
 
         <?php if ($page->template() == "project"): ?>
 
-        <div class="related-posts container">
-            <h3 class="related-posts-title">Gerelateerd nieuws</h3>
-            <ul class="collection">
-            <?php
-            $pageProject = $page->slug();
+            <?php $pageProject = $page->slug();
             $posts = page('home')->children()->visible()->filterBy('project', $pageProject)->flip()->limit(4);
-            foreach($posts as $post): ?>
-                <li class="collection-item related-post">
-                    <a href="<?= $post->url() ?>">
-                        <?php if ($post->hasImages()): 
-                            $image = $post->images()->sortBy('sort', 'asc')->first(); ?>
-                            <img src="<?= $image->thumb(array('width' => 300))->url() ?>" class="project-thumbnail" />
-                        <?php else:
-                            $image = $page->images()->sortBy('sort', 'asc')->first(); ?>
-                            <img src="<?= $image->thumb(array('width' => 300))->url() ?>" class="project-thumbnail" />
-                        <?php endif ?>
-                        <h4 class="related-post-title"><?= $post->title()->html() ?></h4>
-                    </a>
-                </li>
-            <?php endforeach ?>
-            </ul>
-        </div>
+            if ( count($posts) > 0 ): ?>
+
+            <div class="related-posts container">
+                <h3 class="related-posts-title">Gerelateerd nieuws</h3>
+                <ul class="collection">
+                <?php
+                foreach($posts as $post): ?>
+                    <li class="collection-item related-post">
+                        <a href="<?= $post->url() ?>">
+                            <?php if ($post->hasImages()): 
+                                $image = $post->images()->sortBy('sort', 'asc')->first(); ?>
+                                <img src="<?= $image->thumb(array('width' => 300))->url() ?>" class="project-thumbnail" />
+                            <?php else:
+                                $image = $page->images()->sortBy('sort', 'asc')->first(); ?>
+                                <img src="<?= $image->thumb(array('width' => 300))->url() ?>" class="project-thumbnail" />
+                            <?php endif ?>
+                            <h4 class="related-post-title"><?= $post->title()->html() ?></h4>
+                        </a>
+                    </li>
+                <?php endforeach ?>
+                </ul>
+            </div>
+            <?php endif ?>
         <?php endif ?>
         <?php if ($page->template() == "project" || $page->template() == "article"):
             $featured = $pages->find('projecten')->children()->filterBy('hasImages', true)->shuffle()->limit(4); ?>
@@ -66,17 +69,17 @@
     </footer>
 
     <?php if ($page->isHomePage() || $page->template() == "nieuws"): ?>
-        <script src="/assets/build/js/home.js"></script>
+        <script src="/assets/build/js/home.min.js"></script>
     <?php endif; ?>
     <?php if ($page->template() == "contact" || $page->template() == "search"): ?>
-        <script src="/assets/build/js/form.js"></script>
+        <script src="/assets/build/js/form.min.js"></script>
     <?php endif; ?>
-    <?php if ($page->template() == "project" || $page->template() == "article" || $page->isHomePage() || $page->template() == "nieuws"): ?>
-        <script src="/assets/build/js/lightbox.js"></script>
+    <?php if ($page->template() == "project" || $page->template() == "article" || $page->isHomePage() || $page->template() == "nieuws" || $page->template() == "magazine"): ?>
+        <script src="/assets/build/js/lightbox.min.js"></script>
     <?php endif; ?>
-    <?php if ($page->template() != "home" && $page->template() != "projects"): ?>
-        <script src="/assets/build/js/parallax.js"></script>
+    <?php if ($page->template() != "home" && $page->template() != "projects" && $page->template() != "magazine"): ?>
+        <script src="/assets/build/js/parallax.min.js"></script>
     <?php endif ?>
-    <script src="/assets/src/scripts/sw.js"></script>
+    <script src="/assets/build/js/instantpage-5.1.0.min.js" type="module" defer></script>
 </body>
 </html>

@@ -37,6 +37,9 @@
     opacity: 1;
     visibility: visible;
 }
+.no-js .grid {
+    grid-auto-rows: 1fr;
+}
 
 .homepage-article {
     color: $grey;

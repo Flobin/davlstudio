@@ -2,6 +2,41 @@
     width: 100%;
     padding: 0rem 2vw 0 2vw;
 }
+
+.project-tags {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    @include at-least($M) {
+        width: 46vw;
+    }
+}
+.project-tag {
+    margin-bottom: 1rem;
+}
+.project-tag-link {
+    padding: 0.5rem;
+    border-radius: $base-border-radius;
+    margin-bottom: 1rem;
+    color: $link-color;
+    border: 1px solid $link-color;
+    transition: all 0.3s ease-in-out;
+    display:block;
+    &:hover {
+        background-color: $link-hover-color;
+        color: #fff;
+        border-color: $link-hover-color;
+    }
+}
+
 .projects .project {
     text-align: center;
     width: 46vw;
@@ -37,14 +72,5 @@
     height: 25.3125vw;
     @include at-least($M) {
         height: 12.65625vw;
-    }
-}
-.projects .project-tags {
-    @include at-least($L) {
-        letter-spacing: 0.1rem;
-        font-size: 0.75rem;
-    }
-    @include at-least($XL) {
-        font-size: 0.5rem;
     }
 }

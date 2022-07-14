@@ -4,7 +4,9 @@ require_once('lib/bootstrap.php');
 
 class DimensionsTest extends PHPUnit_Framework_TestCase {
 
-  public function __construct() {
+  protected $dim;
+
+  public function setUp(): void {
 
     $this->dim = new Dimensions(500, 300);
 
@@ -34,7 +36,7 @@ class DimensionsTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testFitWidth() {
-  
+
     $dim = $this->dim;
 
     $dim->fitWidth(300);
@@ -54,5 +56,5 @@ class DimensionsTest extends PHPUnit_Framework_TestCase {
     $this->assertEquals(180, $dim->height());
 
   }
-  
+
 }

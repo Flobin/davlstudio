@@ -4,10 +4,13 @@
 
     <article class="<?= $page->project(); ?>">
 
+        <header class="article-header">
+            <h1 class="page-title article-title"><?= $page->title()->html() ?></h1>
+        </header>
+
         <section class="left-content">
-            <header class="article-header lightbox">
-                <time class="article-date"><?= $page->date('d/m/Y') ?></time>
-            </header>
+            <meta itemprop="datePublished" content="<?= $page->date('Y-m-d') ?>">
+            <time class="article-date"><?= $page->date('Y-m-d') ?></time>
 
             <?= $page->richtext()->kirbytext(); ?>
 

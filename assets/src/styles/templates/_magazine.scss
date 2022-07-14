@@ -1,0 +1,79 @@
+.wide-content {
+
+}
+.callout {
+    clear: both;
+    padding-top: 3rem;
+    &:first-child {
+        padding-top: 0;
+    }
+}
+
+.callout-left {
+    float: left;
+    margin-right: 0;
+    padding-bottom: 0;
+    width: calc(50% - 1rem);
+    @include at-least($L) {
+        width: calc(50% - 2rem);
+    }
+}
+.callout-right {
+    float: right;
+    margin-left: 0;
+    width: calc(50% - 1rem);
+    @include at-least($L) {
+        width: calc(50% - 2rem);
+    }
+}
+.callout-only-text {
+    clear: both;
+}
+.callout-text {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 3rem;
+    &.whole {
+        width: 100%;
+        float: none;
+    }
+    &.threequarters {
+        width: 75%;
+        float: none;
+    }
+    &.half {
+        width: calc(50% - 1rem);
+        margin-right: 0;
+        margin-left: 0;
+        @include at-least($L) {
+            width: calc(50% - 2rem);
+        }
+    }
+    &.left {
+        float: left;
+        color: red!important;
+    }
+    &.right {
+        float: right;
+    }
+    @include until($L) {
+        width: 100%;
+        float: none;
+    }
+}
+
+.callout-img {
+    margin-bottom: 2rem;
+}
+
+.project-img, .article-image-link {
+    margin-bottom: 2rem;
+    display: block;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+.right-content img {
+  display: block;
+  width: 100%;
+}

@@ -12,13 +12,13 @@
   "devDependencies": {
     "browserify": "latest",
     "del": "latest",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "latest",
     "gulp-cache": "latest",
     "gulp-clean-css": "latest",
     "gulp-concat": "^2.6.0",
     "gulp-imagemin": "latest",
-    "gulp-livereload": "^3.8.1",
+    "gulp-livereload": "latest",
     "gulp-load-plugins": "^1.5.0",
     "gulp-notify": "latest",
     "gulp-plumber": "^1.2.0",
@@ -27,12 +27,8 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "latest",
     "gulp-util": "^3.0.8",
-    "jshint": "^2.9.7",
-    "path": "^0.12.7",
-    "sw-precache": "^5.2.1",
     "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "latest",
-    "vinyl-transform": "^1.0.0"
+    "vinyl-source-stream": "latest"
   },
   "dependencies": {
     "baguettebox.js": "^1.9.1",

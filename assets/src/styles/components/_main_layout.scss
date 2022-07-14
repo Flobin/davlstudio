@@ -14,7 +14,7 @@ body {
 }
 .site-footer{
     text-align: center;
-    padding: 2rem;
+    padding: 0 2rem 2rem 2rem;
     width: 100%;
     align-self: flex-end;
     flex: 0 1 auto;
@@ -24,6 +24,7 @@ body {
 }
 main {
     flex: 0 1 auto;
+    margin-top: 2rem;
 }
 .container {
     width: 100%;
@@ -50,4 +51,85 @@ main {
 .content {
     margin-top: 7rem;
     // margin-bottom: 3rem;
+}
+
+
+.left-content {
+    float: left;
+    margin-right: 0;
+    padding-bottom: 0;
+    // margin-right: calc(50% + 2rem);
+    width: calc(50% - 1rem);
+    @include at-least($L) {
+        width: calc(50% - 2rem);
+    }
+    &.fixed {
+        overflow: hidden;
+        position: fixed;
+        top: 10rem;
+        left: 2.5%;
+        width: calc(48.5% - 1rem);
+        z-index: 1;
+        @include at-least($M) {
+            left: 12.5%;
+            width: calc(37.5% - 1rem);
+        }
+        @include at-least($L) {
+            left: 16.65%;
+            width: calc(33.35% - 2rem);
+        }
+        @include at-least($XL) {
+            left: 25%;
+            width: calc(25% - 2rem);
+        }
+    }
+    &.offset-top {
+        margin-top: 3rem;
+    }
+}
+.right-content {
+    float: right;
+    margin-left: 0;
+    width: calc(50% - 1rem);
+    // margin-left: calc(50% + 2rem);
+    @include at-least($L) {
+        width: calc(50% - 2rem);
+    }
+    &.fixed {
+        overflow: hidden;
+        position: fixed;
+        top: 10rem;
+        right: 2.5%;
+        width: calc(48.5% - 1rem);
+        z-index: 1;
+        @include at-least($M) {
+            right: 12.5%;
+            width: calc(37.5% - 1rem);
+        }
+        @include at-least($L) {
+            right: 16.65%;
+            width: calc(33.35% - 2rem);
+        }
+        @include at-least($XL) {
+            right: 25%;
+            width: calc(25% - 2rem);
+        }
+    }
+    &.offset-top {
+        margin-top: 3rem;
+    }
+}
+
+.project-header, .article-header, .page-header {
+    padding-bottom: 1.5rem;
+    background-color: #fff;
+    width: 100%;
+    .page-title {
+        margin: 0;
+    }
+    &.fixed {
+        position: fixed;
+        top: 7rem;
+        z-index: 1;
+    }
 }

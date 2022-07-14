@@ -1,8 +1,12 @@
 <?php snippet('header') ?>
 
-<main class="content" role="main">
+<main class="main content" role="main">
 
     <article>
+
+        <header class="project-header">
+            <h1 class="page-title"><?= $page->title()->html() ?></h1>
+        </header>
 
         <section class="left-content">
             <?php snippet('project_info') ?>

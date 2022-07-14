@@ -2,8 +2,8 @@
     <div class="homepage-article-content">
         <header class="homepage-article-header lightbox">
             <a href="<?= $article->url() ?>" itemprop="url"><h2 class="h4 homepage-article-title" itemprop="name"><?= $article->title()->html() ?></h2></a>
-            <meta itemprop="datePublished" content="<?= $article->date() ?>">
-            <time class="homepage-article-date"><?= $article->date('d/m/Y') ?></time>
+            <meta itemprop="datePublished" content="<?= $article->date('Y-m-d') ?>">
+            <time class="homepage-article-date"><?= $article->date('Y-m-d') ?></time>
 
             <?php if($article->showImage() != 'nee'): ?>
                 <?php if($article->hasImages()): 

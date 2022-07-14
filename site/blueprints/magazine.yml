@@ -1,0 +1,72 @@
+title: Magazine
+
+options:
+  template: false
+
+files:
+  sortable: true
+  fields:
+    alt:
+      label: Alt
+      type:  text
+
+pages: false
+
+fields:
+  title:
+    label: Titel
+    type:  text
+
+  callout:
+    label: Afbeelding, tekst of afbeelding naast tekst
+    type: structure
+    modalsize: large
+    entry: >
+      afbeelding: {{calloutimage}}, positie: {{calloutposition}}<br />
+      tekst: <br />
+      {{callouttext}}
+    fields:
+      instructions:
+        type: info
+        label: Instructies
+        text: >
+          Veel velden zijn optioneel. Als je geen afbeelding invult, krijg je een stuk tekst. Als je geen tekst invult, alleen een afbeelding. Als je allebei invult, krijg je een stuk tekst naast een afbeelding.
+      calloutTmage:
+        label: Afbeelding
+        type: image
+      calloutText:
+        label: Tekst
+        type: wysiwyg
+      calloutPosition:
+        label: Positie van de tekst
+        type: radio
+        default: links
+        options:
+          left: links
+          right: rechts
+      calloutTextWidth:
+        label: breedte van de tekst (indien er geen afbeelding is)
+        type: radio
+        default: half
+        options:
+          half: helft
+          threequarters: driekwart
+          whole: geheel
+
+  # fullwidthText:
+  #   label: Volledige breedte tekst
+  #   type: structure
+  #   modalsize: large
+  #   entry: >
+  #     {{richtext}}
+  #   fields:
+  #     richtext:
+  #       label: Tekst
+  #       type: wysiwyg
+
+  description:
+    label: Beschrijving
+    type: text
+    placeholder: Een korte beschrijving van de pagina (optioneel)
+    validate: 
+      maxLength: 150

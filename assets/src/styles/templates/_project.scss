@@ -2,66 +2,6 @@
     @extend .container;
 }
 
-.left-content {
-    float: left;
-    margin-right: 0;
-    padding-bottom: 0;
-    // margin-right: calc(50% + 2rem);
-    width: calc(50% - 1rem);
-    @include at-least($L) {
-        width: calc(50% - 2rem);
-    }
-    &.fixed {
-        overflow: hidden;
-        position: fixed;
-        top: 7rem;
-        left: 2.5%;
-        width: calc(48.5% - 1rem);
-        z-index: 1;
-        @include at-least($M) {
-            left: 12.5%;
-            width: calc(37.5% - 1rem);
-        }
-        @include at-least($L) {
-            left: 16.65%;
-            width: calc(33.35% - 2rem);
-        }
-        @include at-least($XL) {
-            left: 25%;
-            width: calc(25% - 2rem);
-        }
-    }
-}
-.right-content {
-    float: right;
-    margin-left: 0;
-    width: calc(50% - 1rem);
-    // margin-left: calc(50% + 2rem);
-    @include at-least($L) {
-        width: calc(50% - 2rem);
-    }
-    &.fixed {
-        overflow: hidden;
-        position: fixed;
-        top: 7rem;
-        right: 2.5%;
-        width: calc(48.5% - 1rem);
-        z-index: 1;
-        @include at-least($M) {
-            right: 12.5%;
-            width: calc(37.5% - 1rem);
-        }
-        @include at-least($L) {
-            right: 16.65%;
-            width: calc(33.35% - 2rem);
-        }
-        @include at-least($XL) {
-            right: 25%;
-            width: calc(25% - 2rem);
-        }
-    }
-}
-
 .project-meta {
     display: block;
     font-size: 0.75em;

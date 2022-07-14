@@ -46,6 +46,10 @@ function resizeAllGridItems(){
 
 function DOMContentLoaded() {
 
+  // set no-js to js
+  document.querySelector('.no-js').classList.add('js');
+  document.querySelector('.no-js').classList.remove('no-js');
+
   // console.log('DOMContentLoaded home.js');
 
   // set background colors on items in between news

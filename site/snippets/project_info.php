@@ -45,12 +45,12 @@
             Oppervlak: <?= $page->area() ?>
         </li>
         <?php endif; ?>
-        <?php if($page->other() != ''):?>
-        <li class="project-other">
-            <?php foreach($page->other()->yaml() as $item): ?>
+        <?php if($page->other() != ''):
+            foreach($page->other()->yaml() as $item): ?>
+            <li class="project-other">
                 <?= $item['label'] . ": " . $item['text'] ?>
-            <?php endforeach ?>
-        </li>
-        <?php endif; ?>
+            </li>
+            <?php endforeach; 
+        endif; ?>
     </ul>
 </aside>
