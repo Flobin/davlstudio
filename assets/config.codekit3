@@ -819,6 +819,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/src\/styles\/partials\/_print.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 1,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 2,
+      "oA" : 1,
+      "oAP" : "\/build\/css\/_print.min.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/src\/styles\/partials\/_typography.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -997,7 +1012,7 @@
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "\/favicons\/apple-touch-icon-120x120.png",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 679415476.10307395
+    "lastBuiltDate" : 679585043.95222902
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,

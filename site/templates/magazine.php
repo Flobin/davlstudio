@@ -8,38 +8,30 @@
             <h1 class="page-title"><?= $page->title()->html() ?></h1>
         </header>
 
-<!--         <section class="left-content">
-            <?= $page->richtext()->kirbytext() ?>
-        </section>
-
-        <section class="right-content lightbox">
-            <?php
-            $images = $page->images()->sortBy('sort', 'asc');
-            foreach($images as $image): ?>
-                <a href="<?= $image->url() ?>" data-caption="<?= $image->alt(); ?>" class="project-img">
-                    <?= $image->thumb(array('width' => 600)); ?>
-                </a>
-            <?php endforeach ?>
-        </section> -->
-
         <section class="wide-content">
             <?php if($page->callout() != ''):
                 foreach($page->callout()->toStructure() as $item): ?>
                 <div class="callout lightbox">
                     <?php 
-                    if($item->calloutImage() != ''):
-                        if($item->calloutPosition() == 'left'):
+                    if($item->calloutImage()->isNotEmpty()):
+                        if($item->calloutText()->isEmpty()):
+                    ?>
+                    <a href="<?= $page->url() . "/" . $item->calloutImage(); ?>" class="callout-img <?= $item->calloutWidth() ?>">
+                       <?= $item->calloutImage()->toFile()->thumb(array('width' => 1280)); ?>
+                    </a>
+                    <?php
+                        elseif($item->calloutPosition() == 'left'):
                     ?>
                     <p class="callout-text half callout-left">
                         <?= $item->calloutText() ?>
                     </p>
-                    <a href="<?= $page->url() . "/" . $item->calloutImage(); ?>" class="callout-img callout-right">
+                    <a href="<?= $page->url() . "/" . $item->calloutImage(); ?>" class="callout-img callout-right half">
                        <?= $item->calloutImage()->toFile()->thumb(array('width' => 600)); ?>
                     </a>
                     <?php 
                         elseif($item->calloutPosition() == 'right'):
                     ?>
-                    <a href="<?= $page->url() . "/" . $item->calloutImage(); ?>" class="callout-img callout-left">
+                    <a href="<?= $page->url() . "/" . $item->calloutImage(); ?>" class="callout-img callout-left half">
                        <?= $item->calloutImage()->toFile()->thumb(array('width' => 600)); ?>
                     </a>
                     <p class="callout-text half callout-right">
@@ -49,7 +41,7 @@
                         endif;
                     else:
                     ?>
-                    <p class="callout-text callout-<?= trim($item->calloutPosition()) ?> <?= $item->calloutTextWidth() ?> callout-only-text">
+                    <p class="callout-text callout-<?= trim($item->calloutPosition()) ?> <?= $item->calloutWidth() ?> callout-only-text">
                         <?= $item->calloutText() ?>
                     </p>
                     <?php                            
@@ -59,6 +51,34 @@
                 <?php endforeach; 
             endif; ?>
         </section>
+
+        <?php if($page->gallery() != ''): ?>
+        <section class="wide-content gallery">
+            <h2 class="gallery-title">Galerij</h2>
+            <ul class="collection gallery-items lightbox">
+            <?php
+            // get the images from the checkboxes
+            $galleryImages = $page->gallery()->value;
+            
+            // remove the whitespace from the string
+            $galleryImagesNoWhitespace = preg_replace('/\s/', '', $galleryImages);
+
+            // make the string into an array
+            $galleryImagesArray = explode(',', $galleryImagesNoWhitespace);
+
+            // loop over the array
+            foreach($galleryImagesArray as $image): ?>
+
+                <li class="collection-item gallery-item">
+                    <a href="<?= $page->files()->find($image)->url() ?>" class="gallery-img-link">
+                       <img src="<?= $page->files()->find($image)->thumb(array('width' => 300))->url(); ?>" class="gallery-img">
+                    </a>
+                </li>
+
+            <?php endforeach; ?>
+            </ul>
+        </section>
+        <?php endif; ?>
 
     </article>
 

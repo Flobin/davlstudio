@@ -76,33 +76,72 @@
     float: right;
     position: relative;
     margin-top: 1rem;
+    z-index: 999;
     @include at-least($M) {
         height: 4rem;
-        // opacity: 0;
-        // transition: opacity 0.3s ease-in-out;
-        // visibility: hidden;
+    }
+    @include until($L) {
+        text-align: right;
+    }
+    // @include until($M) {
+    //     min-width: calc(50% - 2rem);
+    // }
+}
+
+// display top to bottom on smaller screens
+.menu {
+    display: flex;
+    @include until($L) {
+        flex-direction: column;
     }
 }
-// .home .menu-container {
-//     margin-top: 0;
-// }
+
 .menu-item {
     display: inline-block;
     text-transform: uppercase;
-    @include at-least($M) {
-        font-size: 0.75rem;
-        margin-right: 1rem;
-        margin-top: 0;
+    letter-spacing: 0.25em;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 0;
+    @include at-least($L) {
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
+        font-size: 0.75rem;
         height: 100%;
-        letter-spacing: 0.25em;
-    }
-    @include at-least($L) {
+        margin-right: 1rem;
         letter-spacing: 0.5em;
     }
     &:last-child {
         margin-right: 0;
+    }
+    &.toggle-text {
+        color: $link-color;
+        &:hover {
+            color: $link-hover-color;
+        }
+    }
+}
+#menu-toggle-label {
+    margin-right: 1rem;
+}
+#submenu-toggle-label {
+    color: $link-color;
+    &:hover {
+        color: $link-hover-color;
+        cursor: pointer;
+    }
+}
+.submenu-items {
+    list-style-type: none;
+}
+.submenu-item {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    @include at-least($L) {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
     }
 }
 
@@ -119,210 +158,76 @@
     }
 }
 
-$items: 3;
-$transition-duration: 0.3s ease-in-out;
-$transition-delay: 0.05s;
-
-/* Toggle functionality */
-
-// To hide the checkbox
-#menu-toggle {
-    opacity: 0;
+// hide input button everywhere 
+.menu-toggle {
+    display: none;
+    visibility: hidden;
 }
-#menu-toggle, .toggle-container {
-    @include at-least($M) {
+
+// hide menu buttons on larger screens
+#menu-toggle-label, #menu-toggle-label {
+    @include at-least($L) {
         display: none;
         visibility: hidden;
     }
 }
 
-// #menu-toggle:focus {
-//     & ~ .toggle-container .toggle-button {
-//         box-shadow: 0 0 0 0.5rem hsla(0, 0%, 0%, 0.1);
-//     }
-// }
-
-// Styles for the 'open' state, if the checkbox is checked
-#menu-toggle:checked {
-    // Any element you need to change the style if menu is open goes here, using the sibling selector (~) as follows
-
-    // Making the "X" icon using `:before` and `:after` pseudo-elements
-    & ~ .toggle-container .toggle-button {
-        box-shadow: 0 0 0 20rem hsla(0,0%,100%,1);
-        // background-color: hsla(0,0%,100%,1);
-        &:hover {
-            box-shadow: 0 0 0 20rem hsla(0,0%,100%,1);
-        }
-        &:before {
-            transform: translateY(-50%) rotate(45deg) scale(1);
-        }
-        &:after {
-            transform: translateY(-50%) rotate(-45deg) scale(1);
-        }
-    }
-    &:focus ~ .toggle-container .toggle-button {
-        box-shadow: 0 0 0 20rem hsla(0,0%,100%,1);
-    }
-
-    // Open nav
-    & ~ .menu {
-        @include until($M) {
-            margin-bottom: 6rem;
-            pointer-events: auto;
-            transform: translate(-7.5rem, 3rem);
-        }
-        // Restoring nav items from "lines" in the menu icon
-        .menu-item {
-            @include until($M) {
-                color: $text-color;
-                letter-spacing: 0.15rem;
-                height: 3.75rem;
-                line-height: 3.75rem;
-                font-size: 1.25rem;
-                margin-top: 0;
-                opacity: 1;
-                transform: scaleY(1);
-                transition: $transition-duration, opacity 0.1s ease-in-out;
-            }
-
-            // Setting delays for the nav items in open transition
-            @for $i from 1 through $items {
-                &:nth-child(#{$i}) {
-                    $delay: ($items - $i) * $transition-delay;
-                    transition-delay: $delay;
-                    &:before {
-                        transition-delay: $delay;
-                    }
-                }
-            }
-    
-            // Hiding the lines
-            &:before {
-                opacity: 0;
-            }
-        }
-    }
-}
-.menu-item:nth-child(n+4) {
-    @include until($M) {
-        display: none;
-    }
-}
-#menu-toggle:checked{
-    & ~ .toggle-container {
-        @include at-least($M) {
-            display: none;
-        }
-        &:before,&:after {
-            @include at-least($M) {
-                display: none;
-            }
-        }
-    }
-}
-
-/* Toggle button */
-
-.toggle-button {
-    position: absolute;
-    right: 0;
-    display: inline-block;
-    width: 100%;
-    height: 1.5rem;
-    margin: 2rem 0 2rem 2rem;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    border-radius: 100%;
-    transition: 0.4s ease-in-out;
-
-    // Shadow on hover
-    // &:hover {
-    //   box-shadow: 0 0 0 .75rem hsla(0, 0%, 0%, 0.1);
-    //   background-color: hsla(0, 0%, 0%, 0.1);
-    // }
-
-    // Making the "X" icon using `:before` and `:after` pseudo-elements
-    // Initially hidden because `scale(0)` transformation
-
-    &:before, &:after {
-        position: absolute;
-        content: '';
-        top: 50%;
-        right: 0;
-        width: 1.25rem;
-        height: 0.125rem;
-        background-color: $text-color;
-        border-radius: 0.25rem;
-        transition: $transition-duration;
-    }
-
-    &:before {
-        transform: translateY(-50%) rotate(45deg) scale(0);
-    }
-
-    &:after {
-        transform: translateY(-50%) rotate(-45deg) scale(0);
-    }
-}
-
-
-/* Menu */
-
+// hide menu on smaller screens
 .menu {
-    @include until($M) {
-        display: inline-block;
-        margin: 2rem 0 2rem 2rem;
-        // Don't want pointer-events as menu is closed
-        pointer-events: none;
-        transition: $transition-duration;
-        position: relative;
-        width: 1.25rem;
+    position: relative;
+    @include until($L) {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        background-color: $background-color;
+        padding: 2rem;
+        border-radius: $base-border-radius;
+        box-shadow: -0.5rem 0.5rem 1.25rem 0.1rem hsla(0,0%,0%,0.35);
     }
 }
 
-// Showing nav items as lines, making up the hamburger menu icon
-.menu-item {
-    @include until($M) {
-        position: relative;
-        display: inline-block;
-        float: left;
-        clear: both;
-        color: hsla(0,0%,100%,0);
-        font-size: 1rem;
-        letter-spacing: -0.5rem;
-        height: 0.5rem;
-        line-height: 0.5rem;
-        text-transform: uppercase;
-        white-space: nowrap;
-        transform: scaleY(0.2);
-        transition: $transition-duration, opacity 1s;
-    }
+// hamburger icon for main menu
+.toggle-button:after {
+    content: '≡';
+    font-size: 2rem;
+    font-weight: 100;
+}
 
-    // Setting delays for the nav items in close transition
-    @for $i from 1 through $items {
-        &:nth-child(#{$i}) {
-            $delay: ($i - 1) * $transition-delay;
-            transition-delay: $delay;
-            &:before {
-                transition-delay: $delay;
-            }
-        }
+// main menu open
+#main-menu-toggle:checked {
+    & ~ .menu {
+        opacity: 1;
+        display: flex;
+        visibility: visible;
     }
+    & ~ .toggle-container .toggle-button:after {
+        content: '×'
+    }
+}
 
-    // Getting the lines for the hamburger menu icon
-    &:before {
-        @include until($M) {
-            position: absolute;
-            content: '';
-            top: 50%;
-            right: 0;
-            left: 0;
-            width: 1.25rem;
-            height: 0.125rem;
-            background-color: $text-color;
-            transform: translateY(-50%) scaleY(5);
-            transition: $transition-duration;
-        }
+// hide submenu 
+.submenu-items {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    background: $background-color;
+}
+
+// submenu open
+#submenu-toggle:checked ~ .submenu-items, .submenu:hover .submenu-items {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
+    top: 4rem;
+    padding: 1rem;
+    box-shadow: -0.5rem 0.5rem 1.25rem 0.1rem hsla(0,0%,0%,0.35);
+    border-radius: $base-border-radius;
+    @include until($L) {
+        top: 6rem;
+        right: 0;
+        text-align: right;
     }
 }

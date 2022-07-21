@@ -1,0 +1,47 @@
+@media print {
+    img {
+        filter: none;
+    }
+    .menu-container {
+        display: none;
+    }
+    .callout-img, .project-img, .article-image { 
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    img, figure, a {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        display: inline;
+    }
+    // .callout {
+    //     display: inline-flex;
+    //     width: 100%;
+    //     flex-direction: row;
+    //     justify-content: space-between;
+    //     float: none;
+    //     .callout-text, .callout-img {
+    //         display: inline;
+    //         float: none!important;
+    //     }
+    //     .half {
+    //         margin: 0!important;
+    //         width: calc(50% - 2rem);
+    //     }
+    //     .threequarters {
+    //         width: 75%;
+    //         margin-left: auto;
+    //         margin-right: auto;
+    //         align-self: center;
+    //     }
+    //     .whole {
+    //         width: 100%;
+    //     }
+    // }
+    .random-content .project, .related-post {
+        width: calc(25% - 3rem);
+        break-inside: avoid;
+        page-break-inside: avoid;
+        display: block;
+    }
+}

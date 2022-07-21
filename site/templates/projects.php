@@ -2,16 +2,6 @@
 
 <main class="main content" role="main">
 
-    <ul class="project-tags">
-      <?php foreach($tags as $tag): ?>
-      <li class="project-tag">
-        <a class="project-tag-link" href="<?= url('projecten/' . url::paramsToString(['tag' => $tag])) ?>">
-          <?= html($tag) ?>
-        </a>
-      </li>
-      <?php endforeach ?>
-    </ul>
-
     <ul class="collection">
         <?php foreach($projects as $project): ?>
             <li class="collection-item project">

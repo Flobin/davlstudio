@@ -61,12 +61,23 @@
             </a>
 
             <div class="menu-container">
-                <input id="menu-toggle" type="checkbox" name="menu-toggle">
-                <label class="toggle-container" for="menu-toggle">
+                <input class="menu-toggle" id="main-menu-toggle" type="checkbox" name="main-menu-toggle">
+                <label class="toggle-container" id="menu-toggle-label" for="main-menu-toggle">
                     <span class="toggle-button"></span>
                 </label>
 
                 <nav class="menu" role="menu">
+                    <div class="submenu">
+                        <label class="toggle-container menu-item" id="submenu-toggle-label" for="submenu-toggle">
+                            <span class="toggle-text">expertise</span>
+                        </label>
+                        <input class="menu-toggle" id="submenu-toggle" type="checkbox" name="submenu-toggle">
+                        <ul class="submenu-items">
+                        <?php foreach($site->index()->filterBy('template', 'magazine') as $item): ?>
+                            <li class="submenu-item" role="menuitem"><a href="<?= $item->url() ?>"><?= $item->title() ?></a></li>
+                        <?php endforeach ?>
+                        </ul>
+                    </div>
                     <a class="menu-item" role="menuitem" href="/projecten">projecten</a>
                     <a class="menu-item" role="menuitem" href="/contact">contact</a>
                     <a class="menu-item" role="menuitem" href="/over">over ons</a>

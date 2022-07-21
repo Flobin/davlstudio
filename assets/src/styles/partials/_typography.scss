@@ -6,7 +6,7 @@ html, body {
     font-weight: 300;
     font-family: $azo;
     font-size: 14px;
-    font-size: calc(13px + (15 - 13) * (100vw - 480px) / (1920 - 480));
+    // font-size: calc(13px + (15 - 13) * (100vw - 480px) / (1920 - 480));
 }
 h1,h2,h3,h4,h5,h6 {
     line-height: 1;

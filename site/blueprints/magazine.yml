@@ -31,21 +31,21 @@ fields:
         label: Instructies
         text: >
           Veel velden zijn optioneel. Als je geen afbeelding invult, krijg je een stuk tekst. Als je geen tekst invult, alleen een afbeelding. Als je allebei invult, krijg je een stuk tekst naast een afbeelding.
-      calloutTmage:
+      calloutImage:
         label: Afbeelding
         type: image
       calloutText:
         label: Tekst
         type: wysiwyg
       calloutPosition:
-        label: Positie van de tekst
+        label: Positie van de tekst (als er een afbeelding is)
         type: radio
         default: links
         options:
           left: links
           right: rechts
-      calloutTextWidth:
-        label: breedte van de tekst (indien er geen afbeelding is)
+      calloutWidth:
+        label: De breedte van één item (alleen tekst of alleen een afbeelding)
         type: radio
         default: half
         options:
@@ -53,20 +53,16 @@ fields:
           threequarters: driekwart
           whole: geheel
 
-  # fullwidthText:
-  #   label: Volledige breedte tekst
-  #   type: structure
-  #   modalsize: large
-  #   entry: >
-  #     {{richtext}}
-  #   fields:
-  #     richtext:
-  #       label: Tekst
-  #       type: wysiwyg
+  gallery:
+    label: Galerij
+    type: checkboxes
+    options: images
+    # width: 1/2
 
   description:
     label: Beschrijving
     type: text
     placeholder: Een korte beschrijving van de pagina (optioneel)
+    # width: 1/2
     validate: 
       maxLength: 150

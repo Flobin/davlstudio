@@ -1,5 +1,5 @@
 .wide-content {
-
+    // clear: both;
 }
 .callout {
     clear: both;
@@ -13,26 +13,28 @@
     float: left;
     margin-right: 0;
     padding-bottom: 0;
-    width: calc(50% - 1rem);
-    @include at-least($L) {
-        width: calc(50% - 2rem);
-    }
+    width: calc(50% - 2rem);
+    // @include at-least($L) {
+    //     width: calc(50% - 2rem);
+    // }
 }
 .callout-right {
     float: right;
     margin-left: 0;
-    width: calc(50% - 1rem);
-    @include at-least($L) {
-        width: calc(50% - 2rem);
-    }
+    width: calc(50% - 2rem);
+    // @include at-least($L) {
+    //     width: calc(50% - 2rem);
+    // }
 }
 .callout-only-text {
     clear: both;
+    // padding-bottom: 0;
 }
 .callout-text {
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 3rem;
+    // padding-bottom: 3rem;
+    text-align: justify;
     &.whole {
         width: 100%;
         float: none;
@@ -42,12 +44,12 @@
         float: none;
     }
     &.half {
-        width: calc(50% - 1rem);
+        width: calc(50% - 2rem);
         margin-right: 0;
         margin-left: 0;
-        @include at-least($L) {
-            width: calc(50% - 2rem);
-        }
+        // @include at-least($L) {
+        //     width: calc(50% - 2rem);
+        // }
     }
     &.left {
         float: left;
@@ -56,14 +58,42 @@
     &.right {
         float: right;
     }
-    @include until($L) {
-        width: 100%;
-        float: none;
-    }
+    // @include until($L) {
+    //     width: 100%;
+    //     float: none;
+    // }
 }
 
 .callout-img {
     margin-bottom: 2rem;
+    display: block;
+    &.whole {
+        width: 100%;
+    }
+    &.threequarters {
+        width: 100%;
+        @include at-least($L) {
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    &.half {
+        width: calc(50% - 2rem);
+        @include at-least($L) {
+            
+        }
+        &.callout-left {
+            float: left;
+        }
+        &.callout-right {
+            // margin-left: calc(50% + 4rem);
+            float: right;
+        }
+    }
+    img {
+        width: 100%;
+    }
 }
 
 .project-img, .article-image-link {
@@ -76,4 +106,38 @@
 .right-content img {
   display: block;
   width: 100%;
+}
+
+.gallery {
+    clear: both;
+    padding-top: 2rem;
+}
+
+.gallery-title {
+    padding-bottom: 1rem;
+}
+
+.gallery-items {
+    gap: 4rem;
+    justify-content: flex-start;
+}
+
+.gallery-item {
+    width: calc(50% - 2rem);
+    @include at-least($M) {
+        width: calc(25% - 3rem);
+    }
+}
+
+.gallery-link {
+
+}
+
+.gallery-img {
+    width: 100%;
+    object-fit: cover;
+    height: 25.3125vw;
+    @include at-least($M) {
+        height: 12.65625vw;
+    }
 }
