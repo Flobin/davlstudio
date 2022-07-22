@@ -73,7 +73,7 @@
                         </label>
                         <input class="menu-toggle" id="submenu-toggle" type="checkbox" name="submenu-toggle">
                         <ul class="submenu-items">
-                        <?php foreach($site->index()->filterBy('template', 'magazine') as $item): ?>
+                        <?php foreach($site->index()->filterBy('template', 'magazine')->visible() as $item): ?>
                             <li class="submenu-item" role="menuitem"><a href="<?= $item->url() ?>"><?= $item->title() ?></a></li>
                         <?php endforeach ?>
                         </ul>

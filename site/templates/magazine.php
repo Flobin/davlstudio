@@ -22,9 +22,9 @@
                     <?php
                         elseif($item->calloutPosition() == 'left'):
                     ?>
-                    <p class="callout-text half callout-left">
-                        <?= $item->calloutText() ?>
-                    </p>
+                    <div class="callout-text half callout-left">
+                        <?= $item->calloutText()->kirbytext() ?>
+                    </div>
                     <a href="<?= $page->url() . "/" . $item->calloutImage(); ?>" class="callout-img callout-right half">
                        <?= $item->calloutImage()->toFile()->thumb(array('width' => 600)); ?>
                     </a>
@@ -34,16 +34,16 @@
                     <a href="<?= $page->url() . "/" . $item->calloutImage(); ?>" class="callout-img callout-left half">
                        <?= $item->calloutImage()->toFile()->thumb(array('width' => 600)); ?>
                     </a>
-                    <p class="callout-text half callout-right">
-                        <?= $item->calloutText() ?>
-                    </p>
+                    <div class="callout-text half callout-right">
+                        <?= $item->calloutText()->kirbytext() ?>
+                    </div>
                     <?php
                         endif;
                     else:
                     ?>
-                    <p class="callout-text callout-<?= trim($item->calloutPosition()) ?> <?= $item->calloutWidth() ?> callout-only-text">
-                        <?= $item->calloutText() ?>
-                    </p>
+                    <div class="callout-text callout-<?= trim($item->calloutPosition()) ?> <?= $item->calloutWidth() ?> callout-only-text">
+                        <?= $item->calloutText()->kirbytext() ?>
+                    </div>
                     <?php                            
                     endif; 
                     ?>
