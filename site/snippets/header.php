@@ -67,6 +67,7 @@
                 </label>
 
                 <nav class="menu" role="menu">
+                    <?php if($site->index()->filterBy('template', 'magazine')->visible() != ''): ?>
                     <div class="submenu">
                         <label class="toggle-container menu-item" id="submenu-toggle-label" for="submenu-toggle">
                             <span class="toggle-text">expertise</span>
@@ -78,6 +79,7 @@
                         <?php endforeach ?>
                         </ul>
                     </div>
+                    <?php endif; ?>
                     <a class="menu-item" role="menuitem" href="/projecten">projecten</a>
                     <a class="menu-item" role="menuitem" href="/contact">contact</a>
                     <a class="menu-item" role="menuitem" href="/over">over ons</a>
